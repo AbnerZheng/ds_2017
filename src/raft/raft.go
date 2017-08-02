@@ -57,6 +57,7 @@ const (
 type Log struct {
 	Command interface{}
 	Term    int
+	Index 	int // 可能因为checkpoint的存在而可以缩减日志
 }
 
 //
@@ -284,7 +285,7 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	isLeader := false
 	if rf.state == LEADER {
 		isLeader = true
-		log := Log{command, rf.currentTerm}
+		log := Log{command, rf.currentTerm,  rf.lastLogIndex()}
 		preLogIndex := len(rf.logs) - 1
 		prelogTerm := 0
 		if preLogIndex >= 0 {
@@ -310,6 +311,22 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 		}
 	}
 	return index, term, isLeader
+}
+
+func (rf *Raft) lastLogIndex() int {
+	len2 := len(rf.logs)
+	if len2 == 0{
+		return -1
+	}
+	return rf.logs[len2 - 1].Index
+}
+
+func (rf *Raft) lastLogTerm() int{
+	len2 := len(rf.logs)
+	if len2 == 0{
+		return -1
+	}
+	return rf.logs[len2- 1].Term
 }
 
 //
@@ -370,9 +387,8 @@ func (rf *Raft) broadcastRequestVotes() {
 	rf.mu.Lock()
 	args := RequestVoteArgs{rf.currentTerm, rf.me, 0, 0}
 	if len(rf.logs) > 0 {
-		lastLog := rf.logs[len(rf.logs)-1]
-		args.LastLogIndex = len(rf.logs)
-		args.LastLogTerm = lastLog.Term
+		args.LastLogIndex = rf.lastLogIndex()
+		args.LastLogTerm = rf.lastLogTerm()
 	}
 	rf.mu.Unlock()
 
@@ -407,9 +423,8 @@ func (rf *Raft)heartBeat() {
 	prevLogIndex := -1
 	prevLogTerm := -1
 	if len(rf.logs) != 0 {
-		lastLog := rf.logs[len(rf.logs)-1]
-		prevLogIndex = len(rf.logs) - 1
-		prevLogTerm = lastLog.Term
+		prevLogIndex = rf.lastLogIndex()
+		prevLogTerm = rf.lastLogTerm()
 	}
 	args := AppendEntriesArgs{
 		rf.currentTerm,
