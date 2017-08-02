@@ -23,11 +23,13 @@ import (
 	"time"
 	"math/rand"
 	"fmt"
-	"sync/atomic"
+	"log"
 )
 
 const ELECTION_TIMEOUT_MIN = 250
 const ELECTION_TIMEOUT_RANGE = 250
+
+const HEARTBEAT_INTERVAL = time.Duration(125) * time.Millisecond
 
 // import "bytes"
 // import "encoding/gob"
@@ -47,13 +49,13 @@ type ApplyMsg struct {
 type State int8
 
 const (
-	FOLLOW    State = iota + 1
+	FOLLOWER  State = iota + 1
 	LEADER
 	CANDIDATE
 )
 
 type Log struct {
-	Command string
+	Command interface{}
 	Term    int
 }
 
@@ -73,6 +75,7 @@ type Raft struct {
 	// persistent state on all servers
 	currentTerm int // latest term server has seen (initialized to 0 on first boot, increases monotonically
 	voteFor     int // 投票给谁， 不投的时候选择-1
+	voteCount   int // 拿到票数的数量
 	logs        []Log
 
 	// volatile state on all servers
@@ -83,9 +86,10 @@ type Raft struct {
 	nextIndex  []int // for each server, index of highest log entry to send to that server
 	matchIndex []int // for each server, index of highest log entry known to be replicated on server
 
-	state State
-	ht    chan bool // 检验是否收到heart beat
-	rv    chan bool
+	state            State
+	htChan           chan bool // 检验是否收到heart beat
+	rvChan           chan bool // 检验是否收到requestVote
+	becomeLeaderChan chan bool
 }
 
 // return currentTerm and whether this server
@@ -169,14 +173,14 @@ type AppendEntriesReply struct {
 func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply) {
 	reply.Success = true
 	reply.Term = rf.currentTerm
-	rf.ht <- true
+	rf.htChan <- true
 	rf.Println("leader's term is %d", args.Term)
 	if args.Term > rf.currentTerm {
 		rf.mu.Lock()
 		rf.currentTerm = args.Term
 		rf.mu.Unlock()
 	} else if args.Term < rf.currentTerm {
-		reply.Success = false
+		reply.Success = false // Reply false if term < currentTerm (§5.1)
 	}
 }
 
@@ -186,37 +190,38 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 //
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
 	reply.Term = rf.currentTerm
 	if args.Term < rf.currentTerm { // 如果自己的term比过来拉票的server还高的话，直接否决
-		reply.VoteGranted = false
-	} else {
-		if rf.voteFor == -1 || rf.voteFor == args.CandidateId { // 还未投票或者上次就把票投给该candidate
-			if len(rf.logs) == 0 {
+		reply.VoteGranted = false // figure 2
+		return
+	}
+	if args.Term > rf.currentTerm { // $5.1的基本要求
+		rf.voteFor = -1 // 置为还未投票
+		rf.state = FOLLOWER
+		rf.currentTerm = args.Term
+	}
+
+	if rf.voteFor == -1 || rf.voteFor == args.CandidateId { // 还未投票或者上次就把票投给该candidate
+		if len(rf.logs) == 0 {
+			reply.VoteGranted = true
+		} else {
+			lastLog := rf.logs[len(rf.logs)-1]
+			if lastLog.Term < args.LastLogTerm {
+				reply.VoteGranted = true
+			} else if lastLog.Term == args.LastLogTerm && len(rf.logs) < args.LastLogIndex {
 				reply.VoteGranted = true
 			} else {
-				lastLog := rf.logs[len(rf.logs)-1]
-				if lastLog.Term < args.LastLogTerm {
-					reply.VoteGranted = true
-				} else if lastLog.Term == args.LastLogTerm && len(rf.logs) < args.LastLogIndex {
-					reply.VoteGranted = true
-				} else {
-					reply.VoteGranted = false
-				}
+				reply.VoteGranted = false
 			}
 		}
-
 	}
-
 	if reply.VoteGranted {
-		rf.mu.Lock()
-		defer rf.mu.Unlock()
 		rf.voteFor = args.CandidateId
-		if args.Term > rf.currentTerm {
-			rf.currentTerm = args.Term
-		}
-		rf.state = FOLLOW
-		rf.rv <- true
 	}
+
+	rf.rvChan <- true
 }
 
 //
@@ -272,12 +277,38 @@ func (rf *Raft) sendAppendEntries(server int, args *AppendEntriesArgs, reply *Ap
 // the leader.
 //
 func (rf *Raft) Start(command interface{}) (int, int, bool) {
+	rf.Println("receive request from application.")
 	index := -1
 	term := -1
-	isLeader := true
-
 	// Your code here (2B).
+	isLeader := false
+	if rf.state == LEADER {
+		isLeader = true
+		log := Log{command, rf.currentTerm}
+		preLogIndex := len(rf.logs) - 1
+		prelogTerm := 0
+		if preLogIndex >= 0 {
+			prelogTerm = rf.logs[preLogIndex].Term
+		}
+		rf.logs = append(rf.logs, log)
+		index = len(rf.logs)
+		term = rf.currentTerm
+		logs := []Log{}
+		logs = append(logs, log)
+		args := AppendEntriesArgs{rf.currentTerm, rf.me, preLogIndex, prelogTerm, logs, rf.commitIndex}
+		for i := range (rf.peers) {
+			if i != rf.me {
+				go func(index int) {
+					rf.Println("append entries")
+					reply := AppendEntriesReply{}
+					ok := rf.sendAppendEntries(i, &args, &reply)
+					if !ok {
 
+					}
+				}(i)
+			}
+		}
+	}
 	return index, term, isLeader
 }
 
@@ -309,146 +340,170 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.peers = peers
 	rf.persister = persister
 	rf.me = me
+	rf.currentTerm = 0
 
 	// Your initialization code here (2A, 2B, 2C).
 
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
-	rf.state = FOLLOW
-	rf.ht = make(chan bool)
-	rf.rv = make(chan bool)
+	rf.state = FOLLOWER
+	rf.htChan = make(chan bool)
+	rf.rvChan = make(chan bool)
+	rf.becomeLeaderChan = make(chan bool)
 
 	go rf.StateMachine()
 	return rf
 }
 
 func (rf *Raft) Println(format string, a ...interface{}) {
-	if(Debug <= 0){
+	if (Debug <= 0) {
 		return
 	}
-	t := fmt.Sprintf("I'm %d, current term is %d \t", rf.me, rf.currentTerm)
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	t := fmt.Sprintf("current term is %d, I'm %d:", rf.currentTerm, rf.me)
 	format = t + format + "\n"
 	fmt.Printf(format, a...)
 }
 
-func (rf *Raft) StateMachine() {
-	for true {
+func (rf *Raft) broadcastRequestVotes() {
+	rf.mu.Lock()
+	args := RequestVoteArgs{rf.currentTerm, rf.me, 0, 0}
+	if len(rf.logs) > 0 {
+		lastLog := rf.logs[len(rf.logs)-1]
+		args.LastLogIndex = len(rf.logs)
+		args.LastLogTerm = lastLog.Term
+	}
+	rf.mu.Unlock()
 
-		switch rf.state {
-		case FOLLOW:
-			// 周期性判断是否接到appendEntries
-			rf.Println("enter follow")
-			rf.mu.Lock()
-			rf.voteFor = -1
-			rf.mu.Unlock()
-			randDuration := time.Duration(ELECTION_TIMEOUT_MIN + rand.Intn(ELECTION_TIMEOUT_RANGE))
-			select {
-			case _ = <-rf.ht: // 收到, 不处理就好
-				rf.Println("receive heartbeat")
-			case <-rf.rv:
-				rf.Println("I have voted %d", rf.voteFor)
-			case <-time.After(randDuration * time.Millisecond):
+	for i := range rf.peers {
+		if rf.me != i {
+			go func(index int) {
+				var res RequestVoteReply
+				ok := rf.sendRequestVote(index, &args, &res)
+				rf.Println("ask vote from %d, result is %t", index, res.VoteGranted)
+				if !ok {
+					rf.Println("rpc error send to %d", index)
+				}
 				rf.mu.Lock()
-				rf.state = CANDIDATE
-				rf.mu.Unlock()
-			}
-
-		case CANDIDATE:
-			count := int32(0)
-			rf.mu.Lock()
-			rf.currentTerm ++
-			rf.voteFor = rf.me // vote for self
-			atomic.AddInt32(&count, 1)
-			rf.mu.Unlock()
-			randDuration := time.Duration(ELECTION_TIMEOUT_MIN + rand.Intn(ELECTION_TIMEOUT_RANGE))
-			rf.Println("enter candidate")
-
-			ch1 := make(chan bool)
-
-			go func() {
-				args := RequestVoteArgs{rf.currentTerm, rf.me, 0, 0}
-				if len(rf.logs) > 0 {
-					lastLog := rf.logs[len(rf.logs)-1]
-					args.LastLogIndex = len(rf.logs)
-					args.LastLogTerm = lastLog.Term
-				}
-				for i := range rf.peers {
-					if rf.me != i {
-						go func(index int) {
-							res := &RequestVoteReply{}
-							ok := rf.sendRequestVote(index, &args, res)
-							rf.Println("ask vote from %d, result is %t", index, res.VoteGranted)
-							if !ok {
-								rf.Println("rpc error send to %d", index)
-							}
-							if res.VoteGranted {
-								atomic.AddInt32(&count, 1)
-								if int(count*2) > len(rf.peers) {
-									rf.Println("I'm the leader")
-									rf.mu.Lock()
-									rf.state = LEADER
-									rf.mu.Unlock()
-									ch1 <- true
-								}
-							}else if res.Term > rf.currentTerm{
-								rf.Println("vote fail, falling to follow")
-								rf.mu.Lock()
-								rf.currentTerm = res.Term
-								rf.state = FOLLOW
-								rf.mu.Unlock()
-							}
-						}(i)
+				if res.VoteGranted {
+					rf.voteCount ++
+					if rf.voteCount*2 > len(rf.peers) && rf.state != LEADER {
+						rf.state = LEADER
+						rf.becomeLeaderChan <- true
 					}
-				}
-			}()
-			select {
-			case <-ch1:
-			case <-time.After(randDuration * time.Millisecond):
-			}
-		case LEADER:
-			rf.Println("enter leader")
-			ch_leader := make(chan bool)
-			go func() {
-				randDuration := time.Duration(125)
-				time.Sleep(randDuration * time.Millisecond)
-				ch_leader <- true
-			}()
-			_ = <-ch_leader
-			rf.Println("Start heartbeat")
-			prevLogIndex := -1
-			prevLogTerm := -1
-			if len(rf.logs) != 0 {
-				lastLog := rf.logs[len(rf.logs)-1]
-				prevLogIndex = len(rf.logs) - 1
-				prevLogTerm = lastLog.Term
-			}
 
-			args := AppendEntriesArgs{
-				rf.currentTerm,
-				rf.me,
-				prevLogIndex,
-				prevLogTerm,
-				nil, rf.commitIndex }
-
-			for i := range rf.peers {
-				if rf.me != i {
-					go func(index int) {
-						res := &AppendEntriesReply{}
-						rf.Println("heart beats sent to %d", index)
-						ok := rf.sendAppendEntries(index, &args, res)
-						if !ok {
-							rf.Println("heart beats rpc error send to %d", index)
-						}
-						if !res.Success && res.Term > rf.currentTerm {
-							rf.Println("change from leader to follow")
-							rf.mu.Lock()
-							rf.currentTerm = res.Term
-							rf.state = FOLLOW
-							rf.mu.Unlock()
-						}
-					}(i)
+				} else if res.Term > rf.currentTerm {
+					rf.currentTerm = res.Term
+					rf.state = FOLLOWER
 				}
-			}
+				rf.mu.Unlock()
+			}(i)
 		}
 	}
 }
+
+func (rf *Raft)heartBeat() {
+	prevLogIndex := -1
+	prevLogTerm := -1
+	if len(rf.logs) != 0 {
+		lastLog := rf.logs[len(rf.logs)-1]
+		prevLogIndex = len(rf.logs) - 1
+		prevLogTerm = lastLog.Term
+	}
+	args := AppendEntriesArgs{
+		rf.currentTerm,
+		rf.me,
+		prevLogIndex,
+		prevLogTerm,
+		nil, rf.commitIndex }
+	for i := range rf.peers {
+		if rf.me != i {
+			go func(index int) {
+				res := &AppendEntriesReply{}
+				rf.Println("heart beats sent to %d", index)
+				ok := rf.sendAppendEntries(index, &args, res)
+				if !ok {
+					rf.Println("heart beats rpc error send to %d", index)
+				}
+				if !res.Success && res.Term > rf.currentTerm {
+					rf.Println("change from leader to follow")
+					rf.mu.Lock()
+					rf.currentTerm = res.Term
+					rf.state = FOLLOWER
+					rf.mu.Unlock()
+				}
+			}(i)
+		}
+	}
+}
+
+func (rf *Raft) StateMachine() {
+	for true {
+		rf.mu.Lock()
+		s := rf.state
+		rf.mu.Unlock()
+		switch s{
+		case FOLLOWER:
+			rf.Println("enter follow")
+			select {
+			case _ = <-rf.htChan: // 收到, 不处理就好
+				rf.Println("receive heartbeat")
+			case <-rf.rvChan:
+				rf.Println("I have voted %d", rf.voteFor)
+			case <-time.After(time.Duration(ELECTION_TIMEOUT_MIN+rand.Intn(ELECTION_TIMEOUT_RANGE)) * time.Millisecond):
+				rf.state = CANDIDATE
+			}
+		case CANDIDATE:
+			rf.mu.Lock()
+			rf.currentTerm ++  // increment currentTerm
+			rf.voteFor = rf.me // vote for self
+			rf.voteCount = 1
+			rf.mu.Unlock()
+			rf.Println("enter candidate")
+			//$5.1: issues requestVotes in parallel
+			go rf.broadcastRequestVotes()
+
+			// A candidate continue in this state until one of three thing happens:
+			select {
+			case <-rf.becomeLeaderChan:
+				// a: it wins the election
+				rf.Println("I'm the leader")
+				rf.mu.Lock()
+				rf.nextIndex = make([]int, len(rf.peers))
+				rf.matchIndex = make([]int, len(rf.peers))
+				for i := range rf.peers {
+					// figure 2
+					rf.nextIndex[i] = len(rf.logs) + 1 // initialized to leader last log index + 1
+					rf.matchIndex[i] = 0               // initialized to 0
+				}
+				rf.mu.Unlock()
+			case <-rf.htChan:
+				// b: another server establishes itself as leader
+				rf.Println("receive vote from others, change from candidate to follower")
+				rf.mu.Lock()
+				rf.state = FOLLOWER
+				rf.mu.Unlock()
+			case <-time.After(time.Duration(ELECTION_TIMEOUT_MIN+rand.Intn(ELECTION_TIMEOUT_RANGE)) * time.Millisecond):
+				rf.mu.Lock()
+				rf.state = FOLLOWER
+				rf.mu.Unlock()
+				rf.Println("time over")
+				 //c: a period of time goes by with no winner
+			}
+		case LEADER:
+			rf.Println("enter leader, start heartbeat")
+			rf.heartBeat()
+			ch1 := make(chan bool)
+			go func() {
+				time.Sleep(HEARTBEAT_INTERVAL)
+				ch1 <- true
+			}()
+			<-ch1
+		default:
+			log.Fatal("wrong")
+		}
+
+	}
+}
+

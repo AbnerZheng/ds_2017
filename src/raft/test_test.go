@@ -32,6 +32,7 @@ func TestInitialElection2A(t *testing.T) {
 	// does the leader+term stay the same if there is no network failure?
 	term1 := cfg.checkTerms()
 	time.Sleep(2 * RaftElectionTimeout)
+	fmt.Println("sleep done")
 	term2 := cfg.checkTerms()
 	if term1 != term2 {
 		fmt.Printf("warning: term changed even though there were no failures")
@@ -65,7 +66,9 @@ func TestReElection2A(t *testing.T) {
 	time.Sleep(2 * RaftElectionTimeout)
 	cfg.checkNoLeader()
 
+
 	// if a quorum arises, it should elect a leader.
+
 	cfg.connect((leader2 + 1) % servers)
 	cfg.checkOneLeader()
 
