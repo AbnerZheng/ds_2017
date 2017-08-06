@@ -57,7 +57,7 @@ const (
 type Log struct {
 	Command interface{}
 	Term    int
-	Index 	int // 可能因为checkpoint的存在而可以缩减日志
+	Index   int // 可能因为checkpoint的存在而可以缩减日志
 }
 
 //
@@ -90,6 +90,7 @@ type Raft struct {
 	state            State
 	htChan           chan bool // 检验是否收到heart beat
 	rvChan           chan bool // 检验是否收到requestVote
+	applyCh          chan ApplyMsg
 	becomeLeaderChan chan bool
 }
 
@@ -182,7 +183,44 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		rf.mu.Unlock()
 	} else if args.Term < rf.currentTerm {
 		reply.Success = false // Reply false if term < currentTerm (§5.1)
+		return
 	}
+
+	if args.PrevLogIndex == -1 && args.PrevLogTerm == -1 { // 初始
+		if len(rf.logs) > 0 {
+			rf.logs = []Log{}
+		}
+		rf.logs = append(rf.logs, args.Entries...)
+	} else {
+		var index int
+		for index = len(rf.logs) - 1; index > -1 && rf.logs[index].Index != args.PrevLogIndex; index-- {
+		}
+		if index == -1 {
+			reply.Success = false
+			return
+		} else if rf.logs[index].Term != args.PrevLogTerm {
+			reply.Success = false
+			return
+		} else {
+			rf.logs = rf.logs[0:index+1]
+			rf.logs = append(rf.logs, args.Entries...)
+		}
+		if (args.LeaderCommit > rf.commitIndex) {
+			temp := min(args.LeaderCommit, rf.lastLogIndex())
+			for _, e := range (rf.logs[rf.commitIndex+1: temp+1]) {
+				rf.applyCh <- ApplyMsg{e.Index, e.Command, false, nil}
+			}
+			rf.commitIndex = temp
+		}
+	}
+
+}
+
+func min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
 }
 
 //
@@ -279,54 +317,95 @@ func (rf *Raft) sendAppendEntries(server int, args *AppendEntriesArgs, reply *Ap
 //
 func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	rf.Println("receive request from application.")
-	index := -1
-	term := -1
+	c_index := rf.lastLogIndex() + 1
+	term := rf.currentTerm
 	// Your code here (2B).
 	isLeader := false
 	if rf.state == LEADER {
 		isLeader = true
-		log := Log{command, rf.currentTerm,  rf.lastLogIndex()}
-		preLogIndex := len(rf.logs) - 1
-		prelogTerm := 0
-		if preLogIndex >= 0 {
-			prelogTerm = rf.logs[preLogIndex].Term
-		}
+		log := Log{command, rf.currentTerm, rf.lastLogIndex() + 1}
 		rf.logs = append(rf.logs, log)
-		index = len(rf.logs)
-		term = rf.currentTerm
-		logs := []Log{}
-		logs = append(logs, log)
-		args := AppendEntriesArgs{rf.currentTerm, rf.me, preLogIndex, prelogTerm, logs, rf.commitIndex}
+		rf.matchIndex[rf.me] = rf.lastLogIndex() + 1
+		wg := sync.WaitGroup{}
+		wg.Add(len(rf.peers) - 1)
 		for i := range (rf.peers) {
 			if i != rf.me {
-				go func(index int) {
+				go func(raftIndex int) {
+					nextIndex := rf.nextIndex[i]
+					var index int
+					for index = len(rf.logs) - 1; index > 0 && rf.logs[index].Index != nextIndex; index-- {
+						// skip, find the log whose index equal to next index of server i
+					}
+					logs := []Log{}
+					logs = append(logs, rf.logs[index:]...)
+					preLogIndex := -1
+					preLogTerm := -1
+					if index > 0 {
+						preLog := rf.logs[index-1 ]
+						preLogIndex = preLog.Index
+						preLogTerm = preLog.Term
+					}
+					index = len(rf.logs)
+					args := AppendEntriesArgs{rf.currentTerm, rf.me, preLogIndex, preLogTerm, logs, rf.commitIndex}
+
 					rf.Println("append entries")
 					reply := AppendEntriesReply{}
-					ok := rf.sendAppendEntries(i, &args, &reply)
+					ok := rf.sendAppendEntries(raftIndex, &args, &reply)
+					rf.Println("receive reply for appending entries from %d, ok: %t\n", raftIndex, ok)
 					if !ok {
 
+					} else {
+						if reply.Success {
+							rf.mu.Lock()
+							rf.nextIndex[i] = rf.lastLogIndex() + 1
+							rf.matchIndex[i] = rf.lastLogIndex() + 1
+							rf.mu.Unlock()
+						}
+						wg.Done()
+						return
 					}
 				}(i)
 			}
 		}
+
+		wg.Wait()
+		var index int
+		found := false
+		for index = len(rf.logs) - 1; !found && index >= 0 && rf.logs[index].Term == rf.currentTerm && index > rf.commitIndex; index -- {
+			count := 0
+			for _, m := range rf.matchIndex {
+				if m >= index {
+					count += 1
+				}
+				if count*2 > len(rf.peers) {
+					found = true
+					println("would apply command")
+					for _, e := range rf.logs[rf.commitIndex+1:index+1] {
+						applyMsg := ApplyMsg{e.Index, (e.Command).(int), false, nil}
+						rf.applyCh <- applyMsg
+					}
+					rf.commitIndex = index
+				}
+			}
+		}
 	}
-	return index, term, isLeader
+	return c_index, term, isLeader
 }
 
 func (rf *Raft) lastLogIndex() int {
 	len2 := len(rf.logs)
-	if len2 == 0{
+	if len2 == 0 {
 		return -1
 	}
-	return rf.logs[len2 - 1].Index
+	return rf.logs[len2-1].Index
 }
 
-func (rf *Raft) lastLogTerm() int{
+func (rf *Raft) lastLogTerm() int {
 	len2 := len(rf.logs)
-	if len2 == 0{
+	if len2 == 0 {
 		return -1
 	}
-	return rf.logs[len2- 1].Term
+	return rf.logs[len2-1].Term
 }
 
 //
@@ -356,8 +435,10 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf := &Raft{}
 	rf.peers = peers
 	rf.persister = persister
+	rf.commitIndex = -1
 	rf.me = me
 	rf.currentTerm = 0
+	rf.applyCh = applyCh
 
 	// Your initialization code here (2A, 2B, 2C).
 
@@ -419,7 +500,7 @@ func (rf *Raft) broadcastRequestVotes() {
 	}
 }
 
-func (rf *Raft)heartBeat() {
+func (rf *Raft) heartBeat() {
 	prevLogIndex := -1
 	prevLogTerm := -1
 	if len(rf.logs) != 0 {
@@ -458,7 +539,7 @@ func (rf *Raft) StateMachine() {
 		rf.mu.Lock()
 		s := rf.state
 		rf.mu.Unlock()
-		switch s{
+		switch s {
 		case FOLLOWER:
 			rf.Println("enter follow")
 			select {
@@ -489,8 +570,8 @@ func (rf *Raft) StateMachine() {
 				rf.matchIndex = make([]int, len(rf.peers))
 				for i := range rf.peers {
 					// figure 2
-					rf.nextIndex[i] = len(rf.logs) + 1 // initialized to leader last log index + 1
-					rf.matchIndex[i] = 0               // initialized to 0
+					rf.nextIndex[i] = rf.lastLogIndex() + 1 // initialized to leader last log index + 1
+					rf.matchIndex[i] = 0                    // initialized to 0
 				}
 				rf.mu.Unlock()
 			case <-rf.htChan:
@@ -504,7 +585,7 @@ func (rf *Raft) StateMachine() {
 				rf.state = FOLLOWER
 				rf.mu.Unlock()
 				rf.Println("time over")
-				 //c: a period of time goes by with no winner
+				//c: a period of time goes by with no winner
 			}
 		case LEADER:
 			rf.Println("enter leader, start heartbeat")
@@ -521,4 +602,3 @@ func (rf *Raft) StateMachine() {
 
 	}
 }
-

@@ -1,0 +1,1548 @@
+disconnect(0)
+current term is 0, I'm 0:enter follow
+disconnect(1)
+disconnect(2)
+disconnect(3)
+disconnect(4)
+connect(0)
+connect(1)
+connect(2)
+connect(3)
+connect(4)
+Test (2B): basic agreement ...
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 0, I'm 4:enter follow
+current term is 0, I'm 3:enter follow
+current term is 0, I'm 1:enter follow
+current term is 0, I'm 2:enter follow
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 1, I'm 1:enter candidate
+current term is 1, I'm 2:I have voted 1
+current term is 1, I'm 3:I have voted 1
+current term is 1, I'm 4:I have voted 1
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:I have voted 1
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:ask vote from 3, result is true
+current term is 1, I'm 1:ask vote from 0, result is true
+current term is 1, I'm 1:I'm the leader
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:ask vote from 2, result is true
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:ask vote from 4, result is true
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:receive request from application.
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 2:receive request from application.
+current term is 1, I'm 3:receive request from application.
+current term is 1, I'm 4:receive request from application.
+current term is 1, I'm 0:receive request from application.
+current term is 1, I'm 1:receive request from application.
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 2:receive request from application.
+current term is 1, I'm 3:receive request from application.
+current term is 1, I'm 4:receive request from application.
+current term is 1, I'm 0:receive request from application.
+current term is 1, I'm 1:receive request from application.
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive request from application.
+current term is 1, I'm 3:receive request from application.
+current term is 1, I'm 4:receive request from application.
+current term is 1, I'm 0:receive request from application.
+current term is 1, I'm 1:receive request from application.
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:receive request from application.
+current term is 1, I'm 3:receive request from application.
+current term is 1, I'm 4:receive request from application.
+current term is 1, I'm 0:receive request from application.
+current term is 1, I'm 1:receive request from application.
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 1:append entries
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 1:append entries
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 1:enter leader, start heartbeat
+current term is 1, I'm 1:heart beats sent to 0
+current term is 1, I'm 1:heart beats sent to 3
+current term is 1, I'm 1:heart beats sent to 4
+current term is 1, I'm 0:leader's term is 1
+current term is 1, I'm 0:receive heartbeat
+current term is 1, I'm 0:enter follow
+current term is 1, I'm 3:leader's term is 1
+current term is 1, I'm 1:heart beats sent to 2
+current term is 1, I'm 4:leader's term is 1
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 2:leader's term is 1
+current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter follow
+--- FAIL: TestBasicAgree2B (10.39s)
+	config.go:440: one(100) failed to reach agreement
+FAIL
+exit status 1
+FAIL	raft	10.401s

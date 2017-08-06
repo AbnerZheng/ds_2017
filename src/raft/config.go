@@ -155,6 +155,7 @@ func (cfg *config) start1(i int) {
 			if m.UseSnapshot {
 				// ignore the snapshot
 			} else if v, ok := (m.Command).(int); ok {
+				fmt.Println("receive command")
 				cfg.mu.Lock()
 				for j := 0; j < len(cfg.logs); j++ {
 					if old, oldok := cfg.logs[j][m.Index]; oldok && old != v {
@@ -166,6 +167,9 @@ func (cfg *config) start1(i int) {
 				_, prevok := cfg.logs[i][m.Index-1]
 				cfg.logs[i][m.Index] = v
 				cfg.mu.Unlock()
+				fmt.Printf("cfg.logs[%d][%d] = %d \n", i, m.Index, v)
+
+
 
 				if m.Index > 1 && prevok == false {
 					err_msg = fmt.Sprintf("server %v apply out of order %v", i, m.Index)
