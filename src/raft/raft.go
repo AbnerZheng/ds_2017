@@ -351,14 +351,14 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 					rf.Println("append entries")
 					reply := AppendEntriesReply{}
 					ok := rf.sendAppendEntries(raftIndex, &args, &reply)
-					rf.Println("receive reply for appending entries from %d, ok: %t\n", raftIndex, ok)
+					rf.Println("receive reply for appending entries from %d, ok: %t\n, reply successful %t" , raftIndex, ok, reply.Success)
 					if !ok {
 
 					} else {
 						if reply.Success {
 							rf.mu.Lock()
-							rf.nextIndex[i] = rf.lastLogIndex() + 1
-							rf.matchIndex[i] = rf.lastLogIndex() + 1
+							rf.nextIndex[raftIndex] = rf.lastLogIndex() + 1
+							rf.matchIndex[raftIndex] = rf.lastLogIndex() + 1
 							rf.mu.Unlock()
 						}
 						wg.Done()
@@ -385,6 +385,7 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 						rf.applyCh <- applyMsg
 					}
 					rf.commitIndex = index
+					break
 				}
 			}
 		}
