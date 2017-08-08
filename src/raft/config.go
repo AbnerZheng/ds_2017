@@ -428,6 +428,7 @@ func (cfg *config) one(cmd int, expectedServers int) int {
 					// committed
 					if cmd2, ok := cmd1.(int); ok && cmd2 == cmd {
 						// and it was the command we submitted.
+						fmt.Println("finish test one")
 						return index
 					}
 				}
