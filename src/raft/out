@@ -1,1245 +1,716 @@
+GOROOT=/usr/local/Cellar/go/1.8/libexec
+GOPATH=/Users/abnerzheng/onedrive/6.824/6.824:/Users/abnerzheng/onedrive/6.824/6.824/6.824
+/usr/local/Cellar/go/1.8/libexec/bin/go test -c -i -o /private/var/folders/xb/r382y0qj4gdbhrphz0bpf0n00000gn/T/TestFailNoAgree2B_in_test_test_go__1_go raft
+/private/var/folders/xb/r382y0qj4gdbhrphz0bpf0n00000gn/T/TestFailNoAgree2B_in_test_test_go__1_go -test.v -test.run ^TestFailNoAgree2B$
 disconnect(0)
 disconnect(1)
-disconnect(2)
-current term is 0, I'm 1:enter follow
 current term is 0, I'm 0:enter follow
+disconnect(2)
+disconnect(3)
+current term is 0, I'm 1:enter follow
+disconnect(4)
+current term is 0, I'm 3:enter follow
+current term is 0, I'm 2:enter follow
 connect(0)
 connect(1)
 connect(2)
-Test (2B): agreement despite follower disconnection ...
+connect(3)
+connect(4)
+current term is 0, I'm 4:enter follow
+Test (2B): no agreement if too many followers disconnect ...
 current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:enter follow
 current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
 current term is 0, I'm 0:receive request from application.
 current term is 0, I'm 1:receive request from application.
 current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
 current term is 0, I'm 0:receive request from application.
 current term is 0, I'm 1:receive request from application.
 current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
 current term is 0, I'm 0:receive request from application.
 current term is 0, I'm 1:receive request from application.
 current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
 current term is 0, I'm 0:receive request from application.
 current term is 0, I'm 1:receive request from application.
 current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
 current term is 0, I'm 0:receive request from application.
 current term is 0, I'm 1:receive request from application.
 current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
 current term is 0, I'm 0:receive request from application.
 current term is 0, I'm 1:receive request from application.
 current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
 current term is 0, I'm 0:receive request from application.
-current term is 1, I'm 1:enter candidate
-current term is 1, I'm 1:ask vote from 2
-current term is 1, I'm 1:ask vote from 0
-current term is 1, I'm 2:I have voted 1
-current term is 1, I'm 0:I have voted 1
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 0, I'm 1:receive request from application.
+current term is 0, I'm 2:receive request from application.
+current term is 0, I'm 3:receive request from application.
+current term is 0, I'm 4:receive request from application.
+current term is 0, I'm 0:receive request from application.
+current term is 1, I'm 2:enter candidate
+current term is 1, I'm 2:ask vote from 4
+current term is 1, I'm 2:ask vote from 1
+current term is 1, I'm 2:ask vote from 0
+current term is 1, I'm 2:ask vote from 3
+current term is 1, I'm 4:I have voted 2
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:I have voted 2
 current term is 1, I'm 0:enter follow
-current term is 1, I'm 2:enter follow
-current term is 1, I'm 1:ask vote from 2, result is true
-current term is 1, I'm 1:I'm the leader
-current term is 1, I'm 1:ask vote from 0, result is true
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is -1, preLogIndex is -1
+current term is 1, I'm 2:ask vote from 0, result is true
+current term is 1, I'm 2:ask vote from 1, result is true
+current term is 1, I'm 2:I'm the leader
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 3:I have voted 2
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 1:I have voted 2
+current term is 1, I'm 2:ask vote from 4, result is true
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:ask vote from 3, result is true
+current term is 1, I'm 4:prevLogIndex:0, prevLogTerm:0 entries: []
+current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)}]
+current term is 1, I'm 3:prevLogIndex:0, prevLogTerm:0 entries: []
+current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)}]
+current term is 1, I'm 1:prevLogIndex:0, prevLogTerm:0 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)}]
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 0:prevLogIndex:0, prevLogTerm:0 entries: []
+current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)}]
 current term is 1, I'm 0:receive heartbeat
 current term is 1, I'm 0:enter follow
-current term is 1, I'm 2:leader's term is 1, prevLogTerm is -1, preLogIndex is -1
-current term is 1, I'm 2:receive heartbeat
-current term is 1, I'm 2:enter follow
 current term is 1, I'm 1:receive request from application.
-current term is 1, I'm 1:append entries
-current term is 1, I'm 1:append entries
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is -1, preLogIndex is -1
-current term is 1, I'm 2:leader's term is 1, prevLogTerm is -1, preLogIndex is -1
+current term is 1, I'm 2:receive request from application.
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 4:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 1:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 2:now nextIndex is [%!s(int=1) %!s(int=1) %!s(int=1) %!s(int=1) %!s(int=2)]
+current term is 1, I'm 2:now nextIndex is [%!s(int=1) %!s(int=2) %!s(int=1) %!s(int=1) %!s(int=2)]
+current term is 1, I'm 0:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 3:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 2:now nextIndex is [%!s(int=2) %!s(int=2) %!s(int=1) %!s(int=1) %!s(int=2)]
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
 current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 2:receive heartbeat
-current term is 1, I'm 2:enter follow
 current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:receive reply for appending entries from 2, ok: true
-, reply successful true
-current term is 1, I'm 1:receive reply for appending entries from 0, ok: true
-, reply successful true
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 2:now nextIndex is [%!s(int=2) %!s(int=2) %!s(int=1) %!s(int=2) %!s(int=2)]
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:dead lock hear
+current term is 1, I'm 2:apply command
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
 receive command
-cfg.logs[1][0] = 101 
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+cfg.logs[2][1] = 10
+current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
 current term is 1, I'm 0:receive heartbeat
-receive command
 current term is 1, I'm 0:enter follow
-cfg.logs[0][0] = 101 
-current term is 1, I'm 2:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 2:receive heartbeat
-current term is 1, I'm 2:enter follow
+current term is 1, I'm 3:apply command
 receive command
-cfg.logs[2][0] = 101 
+current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+cfg.logs[3][1] = 10
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 1:apply command
+receive command
+cfg.logs[1][1] = 10
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 4:apply command
+receive command
+cfg.logs[4][1] = 10
+current term is 1, I'm 0:apply command
+receive command
+cfg.logs[0][1] = 10
 finish test one
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 2:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 2:receive heartbeat
-current term is 1, I'm 2:enter follow
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
 current term is 1, I'm 0:receive heartbeat
 current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 2:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 2:receive heartbeat
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
 current term is 1, I'm 0:receive heartbeat
 current term is 1, I'm 0:enter follow
-current term is 1, I'm 2:enter follow
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 2:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: []
+current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
+current term is 1, I'm 3:receive heartbeat
+current term is 1, I'm 4:receive heartbeat
+current term is 1, I'm 3:enter follow
+current term is 1, I'm 4:enter follow
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
 current term is 1, I'm 0:receive heartbeat
 current term is 1, I'm 0:enter follow
-current term is 1, I'm 2:receive heartbeat
-current term is 1, I'm 2:enter follow
-end check one leader 
-current term is 1, I'm 1:enter leader, start heartbeat
-disconnect(2)
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:receive request from application.
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 1:append entries
-current term is 1, I'm 1:append entries
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:receive reply for appending entries from 0, ok: true
-, reply successful true
-receive command
-cfg.logs[1][1] = 102 
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 1
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-receive command
-cfg.logs[0][1] = 102 
-finish test one
-current term is 1, I'm 1:receive request from application.
-current term is 1, I'm 1:append entries
-current term is 1, I'm 1:append entries
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:receive reply for appending entries from 0, ok: true
-, reply successful true
-receive command
-cfg.logs[1][2] = 103 
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 2
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-receive command
-cfg.logs[0][2] = 103 
-finish test one
-current term is 2, I'm 2:enter candidate
-current term is 2, I'm 2:ask vote from 1
-current term is 2, I'm 2:ask vote from 0
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 2
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 2
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 2, I'm 2:time over
-current term is 2, I'm 2:enter follow
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 2
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 2
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 2
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 3, I'm 2:enter candidate
-current term is 3, I'm 2:ask vote from 1
-current term is 3, I'm 2:ask vote from 0
-current term is 1, I'm 1:heart beats rpc error send to 2
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 2
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 2
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 2
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:receive request from application.
-current term is 1, I'm 1:append entries
-current term is 1, I'm 1:append entries
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:receive reply for appending entries from 0, ok: true
-, reply successful true
-receive command
-cfg.logs[1][3] = 104 
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 3
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-receive command
-cfg.logs[0][3] = 104 
-finish test one
-current term is 1, I'm 1:receive request from application.
-current term is 1, I'm 1:append entries
-current term is 1, I'm 1:append entries
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:receive reply for appending entries from 0, ok: true
-, reply successful true
-receive command
-cfg.logs[1][4] = 105 
-current term is 3, I'm 2:time over
-current term is 3, I'm 2:enter follow
-current term is 1, I'm 1:enter leader, start heartbeat
-current term is 1, I'm 1:heart beats rpc error send to 2
-current term is 1, I'm 1:heart beats sent to 0
-current term is 1, I'm 1:heart beats sent to 2
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 4
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-receive command
-cfg.logs[0][4] = 105 
-finish test one
-connect(2)
-current term is 1, I'm 1:receive request from application.
-current term is 1, I'm 1:append entries
-current term is 1, I'm 1:append entries
-current term is 3, I'm 2:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 1, I'm 0:leader's term is 1, prevLogTerm is 1, preLogIndex is 0
-current term is 3, I'm 2:receive heartbeat
-current term is 3, I'm 2:enter follow
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:receive reply for appending entries from 0, ok: true
-, reply successful true
-current term is 1, I'm 1:receive reply for appending entries from 2, ok: true
-, reply successful false
-receive command
-cfg.logs[1][5] = 106 
-current term is 3, I'm 1:enter follow
+end check one leader
+disconnect(3)
+disconnect(4)
+disconnect(0)
+current term is 1, I'm 2:receive request from application.
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:now nextIndex is [%!s(int=2) %!s(int=3) %!s(int=1) %!s(int=2) %!s(int=2)]
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:heart beats rpc error send to 0
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 2, I'm 4:enter candidate
+current term is 2, I'm 4:ask vote from 3
+current term is 2, I'm 4:ask vote from 0
+current term is 2, I'm 4:ask vote from 1
+current term is 2, I'm 4:ask vote from 2
+current term is 1, I'm 2:heart beats rpc error send to 3
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
 current term is 2, I'm 0:enter candidate
-current term is 2, I'm 0:ask vote from 2
 current term is 2, I'm 0:ask vote from 1
-current term is 2, I'm 0:ask vote from 2, result is false
+current term is 2, I'm 0:ask vote from 4
+current term is 2, I'm 0:ask vote from 2
+current term is 2, I'm 0:ask vote from 3
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 2, I'm 3:enter candidate
+current term is 2, I'm 3:ask vote from 4
+current term is 2, I'm 3:ask vote from 0
+current term is 2, I'm 3:ask vote from 1
+current term is 2, I'm 3:ask vote from 2
+current term is 2, I'm 4:ask vote from 2, result is false
+current term is 2, I'm 4:rpc error send to 2
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:heart beats rpc error send to 3
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:heart beats rpc error send to 0
+current term is 1, I'm 2:heart beats rpc error send to 0
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 2, I'm 3:time over, become candidate next time
+current term is 3, I'm 3:enter candidate
+current term is 3, I'm 3:ask vote from 4
+current term is 3, I'm 3:ask vote from 1
+current term is 3, I'm 3:ask vote from 0
+current term is 3, I'm 3:ask vote from 2
+current term is 2, I'm 0:time over, become candidate next time
+current term is 3, I'm 0:enter candidate
+current term is 3, I'm 0:ask vote from 4
+current term is 3, I'm 0:ask vote from 1
+current term is 3, I'm 0:ask vote from 2
+current term is 3, I'm 0:ask vote from 3
+current term is 2, I'm 4:time over, become candidate next time
+current term is 3, I'm 4:enter candidate
+current term is 3, I'm 4:ask vote from 3
+current term is 3, I'm 4:ask vote from 1
+current term is 3, I'm 4:ask vote from 2
+current term is 3, I'm 4:ask vote from 0
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:heart beats rpc error send to 4
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 3, I'm 4:ask vote from 3, result is false
+current term is 3, I'm 4:rpc error send to 3
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:heart beats rpc error send to 4
 current term is 3, I'm 0:ask vote from 1, result is false
-current term is 4, I'm 2:enter candidate
-current term is 4, I'm 2:ask vote from 1
-current term is 4, I'm 2:ask vote from 0
-current term is 4, I'm 1:I have voted -1
-current term is 4, I'm 1:enter follow
-current term is 4, I'm 2:ask vote from 1, result is false
-current term is 4, I'm 1:receive reply for appending entries from 2, ok: false
-, reply successful false
-current term is 4, I'm 2:time over
+current term is 3, I'm 0:rpc error send to 1
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 3, I'm 3:time over, become candidate next time
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 4, I'm 3:enter candidate
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 4, I'm 3:ask vote from 4
+current term is 4, I'm 3:ask vote from 1
+current term is 4, I'm 3:ask vote from 0
+current term is 4, I'm 3:ask vote from 2
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:receive heartbeat
+current term is 1, I'm 1:enter follow
+current term is 1, I'm 2:heart beats rpc error send to 3
+current term is 4, I'm 3:ask vote from 4, result is false
+current term is 4, I'm 3:rpc error send to 4
+connect(3)
+connect(4)
+connect(0)
+current term is 1, I'm 2:enter leader, start heartbeat
+current term is 1, I'm 2:start to broadcast append
+current term is 1, I'm 2:heart beats sent to 0
+current term is 1, I'm 2:heart beats sent to 1
+current term is 1, I'm 2:heart beats sent to 3
+current term is 1, I'm 2:heart beats sent to 4
+current term is 3, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 3, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 4, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 1, I'm 2:change from leader to follow
+current term is 1, I'm 1:receive heartbeat
+current term is 3, I'm 2:change from leader to follow
+current term is 1, I'm 1:enter follow
+current term is 3, I'm 0:time over, become candidate next time
+
+current term is 4, I'm 0:enter candidate
+
+current term is 4, I'm 0:ask vote from 4
+current term is 4, I'm 0:ask vote from 1
+current term is 4, I'm 0:ask vote from 2
+current term is 4, I'm 0:ask vote from 3
+current term is 4, I'm 0:ask vote from 1, result is false
+current term is 4, I'm 0:ask vote from 3, result is false
+current term is 4, I'm 0:ask vote from 2, result is false
+current term is 4, I'm 4:time over, become candidate next time
+current term is 4, I'm 4:enter follow
+current term is 4, I'm 4:I have voted 0
+current term is 4, I'm 4:enter follow
+current term is 4, I'm 0:ask vote from 4, result is true
 current term is 4, I'm 2:enter follow
-current term is 5, I'm 1:enter candidate
-current term is 5, I'm 1:ask vote from 2
-current term is 5, I'm 1:ask vote from 0
-current term is 5, I'm 2:I have voted 1
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:ask vote from 2, result is true
-current term is 5, I'm 1:I'm the leader
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 2:ask vote from 0, result is false
-current term is 5, I'm 2:rpc error send to 0
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 2:receive request from application.
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 2:ask vote from 1, result is false
-current term is 5, I'm 2:rpc error send to 1
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 2:ask vote from 0, result is false
-current term is 5, I'm 2:rpc error send to 0
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:receive reply for appending entries from 2, ok: false
-, reply successful false
-current term is 5, I'm 1:append entries
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is -1, preLogIndex is -1
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:receive reply for appending entries from 2, ok: true
-, reply successful true
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
+current term is 4, I'm 3:ask vote from 0, result is false
+current term is 4, I'm 3:rpc error send to 0
+current term is 4, I'm 2:heart beats rpc error send to 4
+current term is 4, I'm 2:heart beats rpc error send to 0
+current term is 4, I'm 3:time over, become candidate next time
+current term is 5, I'm 3:enter candidate
+current term is 5, I'm 3:ask vote from 4
+current term is 5, I'm 3:ask vote from 1
+current term is 5, I'm 3:ask vote from 0
+current term is 5, I'm 3:ask vote from 2
+current term is 5, I'm 3:ask vote from 1, result is false
+current term is 5, I'm 3:ask vote from 2, result is false
+current term is 5, I'm 4:I have voted 3
+current term is 5, I'm 4:enter follow
+current term is 5, I'm 3:ask vote from 4, result is true
+current term is 5, I'm 2:heart beats rpc error send to 0
+current term is 5, I'm 2:heart beats rpc error send to 0
+current term is 5, I'm 2:heart beats rpc error send to 3
+current term is 5, I'm 2:heart beats rpc error send to 0
+current term is 5, I'm 3:ask vote from 0, result is false
+current term is 5, I'm 3:rpc error send to 0
+current term is 6, I'm 1:enter candidate
+current term is 6, I'm 1:ask vote from 4
+current term is 6, I'm 1:ask vote from 2
+current term is 6, I'm 1:ask vote from 3
+current term is 6, I'm 4:I have voted 1
+current term is 6, I'm 4:enter follow
+current term is 6, I'm 1:ask vote from 0
+current term is 6, I'm 1:ask vote from 4, result is true
+current term is 6, I'm 2:I have voted 1
+current term is 6, I'm 2:enter follow
+current term is 6, I'm 1:ask vote from 2, result is true
+current term is 6, I'm 1:I'm the leader
+current term is 6, I'm 1:enter leader, start heartbeat
+current term is 6, I'm 1:start to broadcast append
+current term is 6, I'm 1:heart beats sent to 0
+current term is 6, I'm 1:heart beats sent to 2
+current term is 6, I'm 1:heart beats sent to 3
+current term is 6, I'm 1:heart beats sent to 4
+current term is 6, I'm 4:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 2:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 6, I'm 4:receive heartbeat
+current term is 6, I'm 4:enter follow
+current term is 6, I'm 2:receive heartbeat
+current term is 6, I'm 2:enter follow
+current term is 5, I'm 0:ask vote from 2, result is false
+current term is 5, I'm 0:rpc error send to 2
+current term is 6, I'm 2:heart beats rpc error send to 3
+current term is 6, I'm 1:enter leader, start heartbeat
+current term is 6, I'm 1:start to broadcast append
+current term is 6, I'm 1:heart beats sent to 0
+current term is 6, I'm 1:heart beats sent to 2
+current term is 6, I'm 1:heart beats sent to 3
+current term is 6, I'm 1:heart beats sent to 4
+current term is 6, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 6, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 6, I'm 2:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 6, I'm 2:receive heartbeat
+current term is 6, I'm 2:enter follow
+current term is 6, I'm 1:now nextIndex is [%!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3)]
+current term is 6, I'm 4:receive heartbeat
+current term is 6, I'm 4:enter follow
+current term is 6, I'm 2:heart beats rpc error send to 3
+current term is 6, I'm 2:heart beats rpc error send to 0
+current term is 5, I'm 0:time over, become candidate next time
+current term is 5, I'm 0:enter follow
+current term is 5, I'm 0:I have voted 3
+current term is 5, I'm 0:enter follow
+current term is 6, I'm 0:I have voted 1
+current term is 6, I'm 0:enter follow
+current term is 6, I'm 0:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 0:receive heartbeat
+current term is 6, I'm 0:enter follow
+current term is 6, I'm 0:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 0:receive heartbeat
+current term is 6, I'm 3:ask vote from 0, result is true
+current term is 6, I'm 0:enter follow
+current term is 6, I'm 1:ask vote from 0, result is true
+current term is 6, I'm 1:enter leader, start heartbeat
+current term is 6, I'm 1:start to broadcast append
+current term is 6, I'm 1:heart beats sent to 0
+current term is 6, I'm 1:heart beats sent to 2
+current term is 6, I'm 1:heart beats sent to 3
+current term is 6, I'm 1:heart beats sent to 4
+current term is 6, I'm 4:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 6, I'm 0:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 6, I'm 2:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
+current term is 6, I'm 4:receive heartbeat
+current term is 6, I'm 4:enter follow
+current term is 6, I'm 0:receive heartbeat
+current term is 6, I'm 0:enter follow
+current term is 6, I'm 2:receive heartbeat
+current term is 6, I'm 2:enter follow
+current term is 6, I'm 1:now nextIndex is [%!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3)]
+end check one leader
+current term is 6, I'm 1:receive request from application.
+current term is 6, I'm 1:receive request from application.
+current term is 6, I'm 2:heart beats rpc error send to 0
+current term is 6, I'm 2:heart beats rpc error send to 4
+current term is 6, I'm 1:enter leader, start heartbeat
+current term is 6, I'm 1:start to broadcast append
+current term is 6, I'm 1:heart beats sent to 0
+current term is 6, I'm 1:heart beats sent to 2
+current term is 6, I'm 1:heart beats sent to 3
+current term is 6, I'm 1:heart beats sent to 4
+current term is 6, I'm 4:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 1:now nextIndex is [%!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3) %!s(int=5)]
+current term is 6, I'm 4:receive heartbeat
+current term is 6, I'm 4:enter follow
+current term is 6, I'm 2:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 1:now nextIndex is [%!s(int=3) %!s(int=3) %!s(int=5) %!s(int=3) %!s(int=5)]
+current term is 6, I'm 2:receive heartbeat
+current term is 6, I'm 2:enter follow
+current term is 6, I'm 0:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 0:receive heartbeat
+current term is 6, I'm 0:enter follow
+current term is 6, I'm 1:now nextIndex is [%!s(int=5) %!s(int=3) %!s(int=5) %!s(int=3) %!s(int=5)]
+current term is 6, I'm 4:ask vote from 1, result is false
+current term is 6, I'm 4:rpc error send to 1
+current term is 6, I'm 2:heart beats rpc error send to 0
+current term is 6, I'm 1:enter leader, start heartbeat
+current term is 6, I'm 1:start to broadcast append
+current term is 6, I'm 1:dead lock hear
+current term is 6, I'm 1:heart beats sent to 0
+current term is 6, I'm 1:heart beats sent to 2
+current term is 6, I'm 1:heart beats sent to 3
+current term is 6, I'm 1:heart beats sent to 4
+current term is 6, I'm 1:apply command
 receive command
-cfg.logs[2][1] = 102 
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
+cfg.logs[1][2] = 20
 receive command
-cfg.logs[2][2] = 103 
+cfg.logs[1][3] = 30
 receive command
-cfg.logs[2][3] = 104 
+cfg.logs[1][4] = 1000
+current term is 6, I'm 2:prevLogIndex:4, prevLogTerm:6 entries: []
+current term is 6, I'm 4:prevLogIndex:4, prevLogTerm:6 entries: []
+current term is 6, I'm 0:prevLogIndex:4, prevLogTerm:6 entries: []
+current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 4:receive heartbeat
+current term is 6, I'm 4:enter follow
+current term is 6, I'm 2:receive heartbeat
+current term is 6, I'm 2:enter follow
+current term is 6, I'm 4:apply command
 receive command
-cfg.logs[2][4] = 105 
+cfg.logs[4][2] = 20
 receive command
-cfg.logs[2][5] = 106 
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:receive reply for appending entries from 2, ok: false
-, reply successful false
-current term is 5, I'm 1:append entries
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is -1, preLogIndex is -1
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:receive reply for appending entries from 2, ok: true
-, reply successful true
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 2:ask vote from 1, result is false
-current term is 5, I'm 2:rpc error send to 1
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:heart beats rpc error send to 2
-current term is 5, I'm 1:receive reply for appending entries from 2, ok: false
-, reply successful false
-current term is 5, I'm 1:append entries
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is -1, preLogIndex is -1
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:receive reply for appending entries from 2, ok: true
-, reply successful true
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-current term is 5, I'm 1:enter leader, start heartbeat
-current term is 5, I'm 1:heart beats sent to 2
-current term is 5, I'm 1:heart beats sent to 0
-current term is 5, I'm 2:leader's term is 5, prevLogTerm is 1, preLogIndex is 5
-current term is 5, I'm 2:receive heartbeat
-current term is 5, I'm 2:enter follow
-signal: interrupt
-FAIL	raft	22.084s
+cfg.logs[4][3] = 30
+receive command
+cfg.logs[4][4] = 1000
+current term is 6, I'm 0:receive heartbeat
+current term is 6, I'm 0:enter follow
+current term is 6, I'm 2:apply command
+receive command
+cfg.logs[2][2] = 20
+receive command
+cfg.logs[2][3] = 30
+receive command
+cfg.logs[2][4] = 1000
+current term is 6, I'm 0:apply command
+receive command
+cfg.logs[0][2] = 20
+receive command
+cfg.logs[0][3] = 30
+receive command
+cfg.logs[0][4] = 1000
+current term is 6, I'm 2:heart beats rpc error send to 0
+current term is 6, I'm 2:heart beats rpc error send to 4
+current term is 6, I'm 3:time over, become candidate next time
+current term is 6, I'm 3:enter follow
+current term is 6, I'm 3:I have voted 1
+current term is 6, I'm 3:enter follow
+current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 1:ask vote from 3, result is true
+current term is 6, I'm 3:receive heartbeat
+current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 3:enter follow
+current term is 6, I'm 3:receive heartbeat
+current term is 6, I'm 3:enter follow
+current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: []
+current term is 6, I'm 3:receive heartbeat
+current term is 6, I'm 3:enter follow
+current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 3:receive heartbeat
+current term is 6, I'm 3:enter follow
+current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
+current term is 6, I'm 3:receive heartbeat
+current term is 6, I'm 3:enter follow
+current term is 6, I'm 1:enter leader, start heartbeat
+current term is 6, I'm 1:start to broadcast append
+current term is 6, I'm 1:heart beats sent to 0
+current term is 6, I'm 1:heart beats sent to 2
+panic: runtime error: index out of range
+
+goroutine 11 [running]:
+raft.(*Raft).broadcastAppendEntries(0xc42009e460)
+	/Users/abnerzheng/onedrive/6.824/6.824/6.824/src/raft/raft.go:499 +0x525
+raft.(*Raft).StateMachine(0xc42009e460)
+	/Users/abnerzheng/onedrive/6.824/6.824/6.824/src/raft/raft.go:585 +0x80b
+created by raft.Make
+	/Users/abnerzheng/onedrive/6.824/6.824/6.824/src/raft/raft.go:400 +0x27f
+
+Process finished with exit code 2

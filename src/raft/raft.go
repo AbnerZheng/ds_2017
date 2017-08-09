@@ -505,6 +505,7 @@ func (rf *Raft) broadcastAppendEntries() {
 			rf.Println("heart beats sent to %d", i)
 			go func(index int, entriesArgs AppendEntriesArgs) {
 				res := AppendEntriesReply{}
+				rf.Println("to %d is: %s",index, entriesArgs )
 				ok := rf.sendAppendEntries(index, &entriesArgs, &res)
 				if !ok {
 					rf.Println("heart beats rpc error send to %d", index)
@@ -525,7 +526,7 @@ func (rf *Raft) broadcastAppendEntries() {
 					rf.Println("now nextIndex is %s", rf.nextIndex)
 				}else if !res.Success{
 					rf.mu.Lock()
-					rf.nextIndex[index] --
+					rf.nextIndex[index] = entriesArgs.PrevLogIndex - 1
 					rf.mu.Unlock()
 				}
 			}(i,args)
