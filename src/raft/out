@@ -1,716 +1,607 @@
-GOROOT=/usr/local/Cellar/go/1.8/libexec
-GOPATH=/Users/abnerzheng/onedrive/6.824/6.824:/Users/abnerzheng/onedrive/6.824/6.824/6.824
-/usr/local/Cellar/go/1.8/libexec/bin/go test -c -i -o /private/var/folders/xb/r382y0qj4gdbhrphz0bpf0n00000gn/T/TestFailNoAgree2B_in_test_test_go__1_go raft
-/private/var/folders/xb/r382y0qj4gdbhrphz0bpf0n00000gn/T/TestFailNoAgree2B_in_test_test_go__1_go -test.v -test.run ^TestFailNoAgree2B$
 disconnect(0)
 disconnect(1)
-current term is 0, I'm 0:enter follow
+disconnect(2)
+connect(0)
+connect(1)
+connect(2)
+Test (2C): basic persistence ...
+receive command
+cfg.logs[0][1] = 11 
+receive command
+cfg.logs[1][1] = 11 
+receive command
+cfg.logs[2][1] = 11 
+finish test one
+disconnect(0)
+disconnect(1)
+disconnect(2)
+disconnect(0)
+connect(0)
+disconnect(1)
+connect(1)
+disconnect(2)
+connect(2)
+receive command
+cfg.logs[1][1] = 11 
+receive command
+cfg.logs[1][2] = 12 
+receive command
+receive command
+cfg.logs[0][1] = 11 
+cfg.logs[2][1] = 11 
+receive command
+receive command
+cfg.logs[0][2] = 12 
+cfg.logs[2][2] = 12 
+finish test one
+end check one leader 
+disconnect(1)
+disconnect(1)
+connect(1)
+receive command
+cfg.logs[1][1] = 11 
+receive command
+cfg.logs[1][2] = 12 
+receive command
+cfg.logs[2][3] = 13 
+receive command
+cfg.logs[1][3] = 13 
+receive command
+cfg.logs[0][3] = 13 
+finish test one
+end check one leader 
+disconnect(2)
+receive command
+cfg.logs[1][4] = 14 
+receive command
+cfg.logs[0][4] = 14 
+finish test one
+disconnect(2)
+connect(2)
+receive command
+cfg.logs[2][1] = 11 
+receive command
+cfg.logs[2][2] = 12 
+receive command
+cfg.logs[2][3] = 13 
+receive command
+cfg.logs[2][4] = 14 
+end check one leader 
+disconnect(2)
+receive command
+cfg.logs[1][5] = 15 
+receive command
+cfg.logs[0][5] = 15 
+finish test one
+disconnect(2)
+connect(2)
+receive command
+cfg.logs[2][1] = 11 
+receive command
+cfg.logs[2][2] = 12 
+receive command
+cfg.logs[2][3] = 13 
+receive command
+cfg.logs[2][4] = 14 
+receive command
+cfg.logs[2][5] = 15 
+receive command
+cfg.logs[1][6] = 16 
+receive command
+cfg.logs[2][6] = 16 
+receive command
+cfg.logs[0][6] = 16 
+finish test one
+  ... Passed
+disconnect(0)
+disconnect(1)
 disconnect(2)
 disconnect(3)
-current term is 0, I'm 1:enter follow
 disconnect(4)
-current term is 0, I'm 3:enter follow
-current term is 0, I'm 2:enter follow
 connect(0)
 connect(1)
 connect(2)
 connect(3)
 connect(4)
-current term is 0, I'm 4:enter follow
-Test (2B): no agreement if too many followers disconnect ...
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 0, I'm 1:receive request from application.
-current term is 0, I'm 2:receive request from application.
-current term is 0, I'm 3:receive request from application.
-current term is 0, I'm 4:receive request from application.
-current term is 0, I'm 0:receive request from application.
-current term is 1, I'm 2:enter candidate
-current term is 1, I'm 2:ask vote from 4
-current term is 1, I'm 2:ask vote from 1
-current term is 1, I'm 2:ask vote from 0
-current term is 1, I'm 2:ask vote from 3
-current term is 1, I'm 4:I have voted 2
-current term is 1, I'm 4:enter follow
-current term is 1, I'm 0:I have voted 2
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 2:ask vote from 0, result is true
-current term is 1, I'm 2:ask vote from 1, result is true
-current term is 1, I'm 2:I'm the leader
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 3:I have voted 2
-current term is 1, I'm 3:enter follow
-current term is 1, I'm 1:I have voted 2
-current term is 1, I'm 2:ask vote from 4, result is true
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:ask vote from 3, result is true
-current term is 1, I'm 4:prevLogIndex:0, prevLogTerm:0 entries: []
-current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)}]
-current term is 1, I'm 3:prevLogIndex:0, prevLogTerm:0 entries: []
-current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)}]
-current term is 1, I'm 1:prevLogIndex:0, prevLogTerm:0 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)}]
-current term is 1, I'm 4:receive heartbeat
-current term is 1, I'm 4:enter follow
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 3:receive heartbeat
-current term is 1, I'm 3:enter follow
-current term is 1, I'm 0:prevLogIndex:0, prevLogTerm:0 entries: []
-current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)}]
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:receive request from application.
-current term is 1, I'm 2:receive request from application.
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 4:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 1:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 2:now nextIndex is [%!s(int=1) %!s(int=1) %!s(int=1) %!s(int=1) %!s(int=2)]
-current term is 1, I'm 2:now nextIndex is [%!s(int=1) %!s(int=2) %!s(int=1) %!s(int=1) %!s(int=2)]
-current term is 1, I'm 0:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 3:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 2:now nextIndex is [%!s(int=2) %!s(int=2) %!s(int=1) %!s(int=1) %!s(int=2)]
-current term is 1, I'm 4:receive heartbeat
-current term is 1, I'm 4:enter follow
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 3:receive heartbeat
-current term is 1, I'm 3:enter follow
-current term is 1, I'm 2:now nextIndex is [%!s(int=2) %!s(int=2) %!s(int=1) %!s(int=2) %!s(int=2)]
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:dead lock hear
-current term is 1, I'm 2:apply command
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
+Test (2C): more persistence ...
 receive command
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-cfg.logs[2][1] = 10
-current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 3:receive heartbeat
-current term is 1, I'm 3:enter follow
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 3:apply command
+cfg.logs[2][1] = 11 
 receive command
-current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-cfg.logs[3][1] = 10
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 1:apply command
 receive command
-cfg.logs[1][1] = 10
-current term is 1, I'm 4:receive heartbeat
-current term is 1, I'm 4:enter follow
-current term is 1, I'm 4:apply command
+cfg.logs[3][1] = 11 
 receive command
-cfg.logs[4][1] = 10
-current term is 1, I'm 0:apply command
+cfg.logs[0][1] = 11 
 receive command
-cfg.logs[0][1] = 10
+cfg.logs[1][1] = 11 
+cfg.logs[4][1] = 11 
 finish test one
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 4:receive heartbeat
-current term is 1, I'm 4:enter follow
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 3:receive heartbeat
-current term is 1, I'm 3:enter follow
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 3:receive heartbeat
-current term is 1, I'm 3:enter follow
-current term is 1, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 4:receive heartbeat
-current term is 1, I'm 4:enter follow
-current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: []
-current term is 1, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 3:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)}]
-current term is 1, I'm 3:receive heartbeat
-current term is 1, I'm 4:receive heartbeat
-current term is 1, I'm 3:enter follow
-current term is 1, I'm 4:enter follow
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 0:receive heartbeat
-current term is 1, I'm 0:enter follow
-end check one leader
+end check one leader 
 disconnect(3)
 disconnect(4)
+receive command
+cfg.logs[2][2] = 12 
+receive command
+cfg.logs[1][2] = 12 
+receive command
+cfg.logs[0][2] = 12 
+finish test one
+disconnect(2)
 disconnect(0)
-current term is 1, I'm 2:receive request from application.
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:now nextIndex is [%!s(int=2) %!s(int=3) %!s(int=1) %!s(int=2) %!s(int=2)]
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:heart beats rpc error send to 0
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 2, I'm 4:enter candidate
-current term is 2, I'm 4:ask vote from 3
-current term is 2, I'm 4:ask vote from 0
-current term is 2, I'm 4:ask vote from 1
-current term is 2, I'm 4:ask vote from 2
-current term is 1, I'm 2:heart beats rpc error send to 3
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 2, I'm 0:enter candidate
-current term is 2, I'm 0:ask vote from 1
-current term is 2, I'm 0:ask vote from 4
-current term is 2, I'm 0:ask vote from 2
-current term is 2, I'm 0:ask vote from 3
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 2, I'm 3:enter candidate
-current term is 2, I'm 3:ask vote from 4
-current term is 2, I'm 3:ask vote from 0
-current term is 2, I'm 3:ask vote from 1
-current term is 2, I'm 3:ask vote from 2
-current term is 2, I'm 4:ask vote from 2, result is false
-current term is 2, I'm 4:rpc error send to 2
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:heart beats rpc error send to 3
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:heart beats rpc error send to 0
-current term is 1, I'm 2:heart beats rpc error send to 0
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 2, I'm 3:time over, become candidate next time
-current term is 3, I'm 3:enter candidate
-current term is 3, I'm 3:ask vote from 4
-current term is 3, I'm 3:ask vote from 1
-current term is 3, I'm 3:ask vote from 0
-current term is 3, I'm 3:ask vote from 2
-current term is 2, I'm 0:time over, become candidate next time
-current term is 3, I'm 0:enter candidate
-current term is 3, I'm 0:ask vote from 4
-current term is 3, I'm 0:ask vote from 1
-current term is 3, I'm 0:ask vote from 2
-current term is 3, I'm 0:ask vote from 3
-current term is 2, I'm 4:time over, become candidate next time
-current term is 3, I'm 4:enter candidate
-current term is 3, I'm 4:ask vote from 3
-current term is 3, I'm 4:ask vote from 1
-current term is 3, I'm 4:ask vote from 2
-current term is 3, I'm 4:ask vote from 0
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:heart beats rpc error send to 4
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 3, I'm 4:ask vote from 3, result is false
-current term is 3, I'm 4:rpc error send to 3
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:heart beats rpc error send to 4
-current term is 3, I'm 0:ask vote from 1, result is false
-current term is 3, I'm 0:rpc error send to 1
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 3, I'm 3:time over, become candidate next time
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 4, I'm 3:enter candidate
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 4, I'm 3:ask vote from 4
-current term is 4, I'm 3:ask vote from 1
-current term is 4, I'm 3:ask vote from 0
-current term is 4, I'm 3:ask vote from 2
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:receive heartbeat
-current term is 1, I'm 1:enter follow
-current term is 1, I'm 2:heart beats rpc error send to 3
-current term is 4, I'm 3:ask vote from 4, result is false
-current term is 4, I'm 3:rpc error send to 4
+disconnect(1)
+disconnect(3)
+disconnect(4)
 connect(3)
 connect(4)
+disconnect(0)
 connect(0)
-current term is 1, I'm 2:enter leader, start heartbeat
-current term is 1, I'm 2:start to broadcast append
-current term is 1, I'm 2:heart beats sent to 0
-current term is 1, I'm 2:heart beats sent to 1
-current term is 1, I'm 2:heart beats sent to 3
-current term is 1, I'm 2:heart beats sent to 4
-current term is 3, I'm 0:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 1:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 1, I'm 1:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 3, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 4, I'm 3:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 1, I'm 2:change from leader to follow
-current term is 1, I'm 1:receive heartbeat
-current term is 3, I'm 2:change from leader to follow
-current term is 1, I'm 1:enter follow
-current term is 3, I'm 0:time over, become candidate next time
-
-current term is 4, I'm 0:enter candidate
-
-current term is 4, I'm 0:ask vote from 4
-current term is 4, I'm 0:ask vote from 1
-current term is 4, I'm 0:ask vote from 2
-current term is 4, I'm 0:ask vote from 3
-current term is 4, I'm 0:ask vote from 1, result is false
-current term is 4, I'm 0:ask vote from 3, result is false
-current term is 4, I'm 0:ask vote from 2, result is false
-current term is 4, I'm 4:time over, become candidate next time
-current term is 4, I'm 4:enter follow
-current term is 4, I'm 4:I have voted 0
-current term is 4, I'm 4:enter follow
-current term is 4, I'm 0:ask vote from 4, result is true
-current term is 4, I'm 2:enter follow
-current term is 4, I'm 3:ask vote from 0, result is false
-current term is 4, I'm 3:rpc error send to 0
-current term is 4, I'm 2:heart beats rpc error send to 4
-current term is 4, I'm 2:heart beats rpc error send to 0
-current term is 4, I'm 3:time over, become candidate next time
-current term is 5, I'm 3:enter candidate
-current term is 5, I'm 3:ask vote from 4
-current term is 5, I'm 3:ask vote from 1
-current term is 5, I'm 3:ask vote from 0
-current term is 5, I'm 3:ask vote from 2
-current term is 5, I'm 3:ask vote from 1, result is false
-current term is 5, I'm 3:ask vote from 2, result is false
-current term is 5, I'm 4:I have voted 3
-current term is 5, I'm 4:enter follow
-current term is 5, I'm 3:ask vote from 4, result is true
-current term is 5, I'm 2:heart beats rpc error send to 0
-current term is 5, I'm 2:heart beats rpc error send to 0
-current term is 5, I'm 2:heart beats rpc error send to 3
-current term is 5, I'm 2:heart beats rpc error send to 0
-current term is 5, I'm 3:ask vote from 0, result is false
-current term is 5, I'm 3:rpc error send to 0
-current term is 6, I'm 1:enter candidate
-current term is 6, I'm 1:ask vote from 4
-current term is 6, I'm 1:ask vote from 2
-current term is 6, I'm 1:ask vote from 3
-current term is 6, I'm 4:I have voted 1
-current term is 6, I'm 4:enter follow
-current term is 6, I'm 1:ask vote from 0
-current term is 6, I'm 1:ask vote from 4, result is true
-current term is 6, I'm 2:I have voted 1
-current term is 6, I'm 2:enter follow
-current term is 6, I'm 1:ask vote from 2, result is true
-current term is 6, I'm 1:I'm the leader
-current term is 6, I'm 1:enter leader, start heartbeat
-current term is 6, I'm 1:start to broadcast append
-current term is 6, I'm 1:heart beats sent to 0
-current term is 6, I'm 1:heart beats sent to 2
-current term is 6, I'm 1:heart beats sent to 3
-current term is 6, I'm 1:heart beats sent to 4
-current term is 6, I'm 4:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 2:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 6, I'm 4:receive heartbeat
-current term is 6, I'm 4:enter follow
-current term is 6, I'm 2:receive heartbeat
-current term is 6, I'm 2:enter follow
-current term is 5, I'm 0:ask vote from 2, result is false
-current term is 5, I'm 0:rpc error send to 2
-current term is 6, I'm 2:heart beats rpc error send to 3
-current term is 6, I'm 1:enter leader, start heartbeat
-current term is 6, I'm 1:start to broadcast append
-current term is 6, I'm 1:heart beats sent to 0
-current term is 6, I'm 1:heart beats sent to 2
-current term is 6, I'm 1:heart beats sent to 3
-current term is 6, I'm 1:heart beats sent to 4
-current term is 6, I'm 4:prevLogIndex:1, prevLogTerm:1 entries: [{%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 6, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 6, I'm 2:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 6, I'm 2:receive heartbeat
-current term is 6, I'm 2:enter follow
-current term is 6, I'm 1:now nextIndex is [%!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3)]
-current term is 6, I'm 4:receive heartbeat
-current term is 6, I'm 4:enter follow
-current term is 6, I'm 2:heart beats rpc error send to 3
-current term is 6, I'm 2:heart beats rpc error send to 0
-current term is 5, I'm 0:time over, become candidate next time
-current term is 5, I'm 0:enter follow
-current term is 5, I'm 0:I have voted 3
-current term is 5, I'm 0:enter follow
-current term is 6, I'm 0:I have voted 1
-current term is 6, I'm 0:enter follow
-current term is 6, I'm 0:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 0:receive heartbeat
-current term is 6, I'm 0:enter follow
-current term is 6, I'm 0:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 0:receive heartbeat
-current term is 6, I'm 3:ask vote from 0, result is true
-current term is 6, I'm 0:enter follow
-current term is 6, I'm 1:ask vote from 0, result is true
-current term is 6, I'm 1:enter leader, start heartbeat
-current term is 6, I'm 1:start to broadcast append
-current term is 6, I'm 1:heart beats sent to 0
-current term is 6, I'm 1:heart beats sent to 2
-current term is 6, I'm 1:heart beats sent to 3
-current term is 6, I'm 1:heart beats sent to 4
-current term is 6, I'm 4:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 6, I'm 0:prevLogIndex:0, prevLogTerm:0 entries: [{%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 6, I'm 2:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)}]
-current term is 6, I'm 4:receive heartbeat
-current term is 6, I'm 4:enter follow
-current term is 6, I'm 0:receive heartbeat
-current term is 6, I'm 0:enter follow
-current term is 6, I'm 2:receive heartbeat
-current term is 6, I'm 2:enter follow
-current term is 6, I'm 1:now nextIndex is [%!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3)]
-end check one leader
-current term is 6, I'm 1:receive request from application.
-current term is 6, I'm 1:receive request from application.
-current term is 6, I'm 2:heart beats rpc error send to 0
-current term is 6, I'm 2:heart beats rpc error send to 4
-current term is 6, I'm 1:enter leader, start heartbeat
-current term is 6, I'm 1:start to broadcast append
-current term is 6, I'm 1:heart beats sent to 0
-current term is 6, I'm 1:heart beats sent to 2
-current term is 6, I'm 1:heart beats sent to 3
-current term is 6, I'm 1:heart beats sent to 4
-current term is 6, I'm 4:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 1:now nextIndex is [%!s(int=3) %!s(int=3) %!s(int=3) %!s(int=3) %!s(int=5)]
-current term is 6, I'm 4:receive heartbeat
-current term is 6, I'm 4:enter follow
-current term is 6, I'm 2:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 1:now nextIndex is [%!s(int=3) %!s(int=3) %!s(int=5) %!s(int=3) %!s(int=5)]
-current term is 6, I'm 2:receive heartbeat
-current term is 6, I'm 2:enter follow
-current term is 6, I'm 0:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 0:receive heartbeat
-current term is 6, I'm 0:enter follow
-current term is 6, I'm 1:now nextIndex is [%!s(int=5) %!s(int=3) %!s(int=5) %!s(int=3) %!s(int=5)]
-current term is 6, I'm 4:ask vote from 1, result is false
-current term is 6, I'm 4:rpc error send to 1
-current term is 6, I'm 2:heart beats rpc error send to 0
-current term is 6, I'm 1:enter leader, start heartbeat
-current term is 6, I'm 1:start to broadcast append
-current term is 6, I'm 1:dead lock hear
-current term is 6, I'm 1:heart beats sent to 0
-current term is 6, I'm 1:heart beats sent to 2
-current term is 6, I'm 1:heart beats sent to 3
-current term is 6, I'm 1:heart beats sent to 4
-current term is 6, I'm 1:apply command
 receive command
-cfg.logs[1][2] = 20
+cfg.logs[0][1] = 11 
 receive command
-cfg.logs[1][3] = 30
+cfg.logs[0][2] = 12 
 receive command
-cfg.logs[1][4] = 1000
-current term is 6, I'm 2:prevLogIndex:4, prevLogTerm:6 entries: []
-current term is 6, I'm 4:prevLogIndex:4, prevLogTerm:6 entries: []
-current term is 6, I'm 0:prevLogIndex:4, prevLogTerm:6 entries: []
-current term is 6, I'm 2:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 0:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 4:append log, now is [{<nil> %!s(int=0) %!s(int=0)} {%!s(int=10) %!s(int=1) %!s(int=1)} {%!s(int=20) %!s(int=1) %!s(int=2)} {%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 4:receive heartbeat
-current term is 6, I'm 4:enter follow
-current term is 6, I'm 2:receive heartbeat
-current term is 6, I'm 2:enter follow
-current term is 6, I'm 4:apply command
+cfg.logs[0][3] = 13 
 receive command
-cfg.logs[4][2] = 20
+cfg.logs[3][1] = 11 
 receive command
-cfg.logs[4][3] = 30
+cfg.logs[3][2] = 12 
 receive command
-cfg.logs[4][4] = 1000
-current term is 6, I'm 0:receive heartbeat
-current term is 6, I'm 0:enter follow
-current term is 6, I'm 2:apply command
+cfg.logs[3][3] = 13 
 receive command
-cfg.logs[2][2] = 20
+cfg.logs[4][1] = 11 
 receive command
-cfg.logs[2][3] = 30
+cfg.logs[4][2] = 12 
 receive command
-cfg.logs[2][4] = 1000
-current term is 6, I'm 0:apply command
+cfg.logs[4][3] = 13 
+finish test one
+connect(1)
+connect(2)
 receive command
-cfg.logs[0][2] = 20
+cfg.logs[2][3] = 13 
 receive command
-cfg.logs[0][3] = 30
+cfg.logs[1][3] = 13 
 receive command
-cfg.logs[0][4] = 1000
-current term is 6, I'm 2:heart beats rpc error send to 0
-current term is 6, I'm 2:heart beats rpc error send to 4
-current term is 6, I'm 3:time over, become candidate next time
-current term is 6, I'm 3:enter follow
-current term is 6, I'm 3:I have voted 1
-current term is 6, I'm 3:enter follow
-current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 1:ask vote from 3, result is true
-current term is 6, I'm 3:receive heartbeat
-current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 3:enter follow
-current term is 6, I'm 3:receive heartbeat
-current term is 6, I'm 3:enter follow
-current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: []
-current term is 6, I'm 3:receive heartbeat
-current term is 6, I'm 3:enter follow
-current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 3:receive heartbeat
-current term is 6, I'm 3:enter follow
-current term is 6, I'm 3:prevLogIndex:2, prevLogTerm:1 entries: [{%!s(int=30) %!s(int=6) %!s(int=3)} {%!s(int=1000) %!s(int=6) %!s(int=4)}]
-current term is 6, I'm 3:receive heartbeat
-current term is 6, I'm 3:enter follow
-current term is 6, I'm 1:enter leader, start heartbeat
-current term is 6, I'm 1:start to broadcast append
-current term is 6, I'm 1:heart beats sent to 0
-current term is 6, I'm 1:heart beats sent to 2
-panic: runtime error: index out of range
-
-goroutine 11 [running]:
-raft.(*Raft).broadcastAppendEntries(0xc42009e460)
-	/Users/abnerzheng/onedrive/6.824/6.824/6.824/src/raft/raft.go:499 +0x525
-raft.(*Raft).StateMachine(0xc42009e460)
-	/Users/abnerzheng/onedrive/6.824/6.824/6.824/src/raft/raft.go:585 +0x80b
-created by raft.Make
-	/Users/abnerzheng/onedrive/6.824/6.824/6.824/src/raft/raft.go:400 +0x27f
-
-Process finished with exit code 2
+cfg.logs[0][4] = 14 
+receive command
+cfg.logs[1][4] = 14 
+receive command
+cfg.logs[4][4] = 14 
+receive command
+cfg.logs[3][4] = 14 
+receive command
+cfg.logs[2][4] = 14 
+finish test one
+end check one leader 
+disconnect(1)
+disconnect(2)
+receive command
+cfg.logs[0][5] = 15 
+receive command
+receive command
+cfg.logs[3][5] = 15 
+cfg.logs[4][5] = 15 
+finish test one
+disconnect(0)
+disconnect(3)
+disconnect(4)
+disconnect(1)
+disconnect(2)
+connect(1)
+connect(2)
+disconnect(3)
+connect(3)
+receive command
+cfg.logs[3][1] = 11 
+receive command
+cfg.logs[3][2] = 12 
+receive command
+cfg.logs[3][3] = 13 
+receive command
+cfg.logs[3][4] = 14 
+receive command
+cfg.logs[3][5] = 15 
+receive command
+cfg.logs[3][6] = 16 
+receive command
+cfg.logs[1][1] = 11 
+receive command
+cfg.logs[1][2] = 12 
+receive command
+cfg.logs[1][3] = 13 
+receive command
+cfg.logs[1][4] = 14 
+receive command
+cfg.logs[1][5] = 15 
+receive command
+receive command
+cfg.logs[1][6] = 16 
+cfg.logs[2][1] = 11 
+receive command
+cfg.logs[2][2] = 12 
+receive command
+cfg.logs[2][3] = 13 
+receive command
+cfg.logs[2][4] = 14 
+receive command
+cfg.logs[2][5] = 15 
+receive command
+cfg.logs[2][6] = 16 
+finish test one
+connect(4)
+connect(0)
+receive command
+cfg.logs[4][6] = 16 
+receive command
+cfg.logs[0][6] = 16 
+receive command
+cfg.logs[3][7] = 17 
+receive command
+cfg.logs[2][7] = 17 
+receive command
+cfg.logs[4][7] = 17 
+receive command
+cfg.logs[1][7] = 17 
+receive command
+cfg.logs[0][7] = 17 
+finish test one
+end check one leader 
+disconnect(4)
+disconnect(0)
+receive command
+cfg.logs[3][8] = 18 
+receive command
+cfg.logs[2][8] = 18 
+receive command
+cfg.logs[1][8] = 18 
+finish test one
+disconnect(3)
+disconnect(1)
+disconnect(2)
+disconnect(4)
+disconnect(0)
+connect(4)
+connect(0)
+disconnect(1)
+connect(1)
+receive command
+cfg.logs[1][1] = 11 
+receive command
+cfg.logs[1][2] = 12 
+receive command
+cfg.logs[1][3] = 13 
+receive command
+cfg.logs[1][4] = 14 
+receive command
+cfg.logs[1][5] = 15 
+receive command
+cfg.logs[1][6] = 16 
+receive command
+cfg.logs[1][7] = 17 
+receive command
+cfg.logs[1][8] = 18 
+receive command
+cfg.logs[1][9] = 19 
+receive command
+receive command
+cfg.logs[0][1] = 11 
+receive command
+cfg.logs[0][2] = 12 
+cfg.logs[4][1] = 11 
+receive command
+cfg.logs[0][3] = 13 
+receive command
+cfg.logs[0][4] = 14 
+receive command
+receive command
+cfg.logs[0][5] = 15 
+receive command
+cfg.logs[0][6] = 16 
+cfg.logs[4][2] = 12 
+receive command
+receive command
+cfg.logs[0][7] = 17 
+receive command
+cfg.logs[0][8] = 18 
+receive command
+cfg.logs[4][3] = 13 
+cfg.logs[0][9] = 19 
+receive command
+cfg.logs[4][4] = 14 
+receive command
+cfg.logs[4][5] = 15 
+receive command
+cfg.logs[4][6] = 16 
+receive command
+cfg.logs[4][7] = 17 
+receive command
+cfg.logs[4][8] = 18 
+receive command
+cfg.logs[4][9] = 19 
+finish test one
+connect(2)
+connect(3)
+receive command
+receive command
+cfg.logs[2][9] = 19 
+cfg.logs[3][9] = 19 
+receive command
+cfg.logs[1][10] = 20 
+receive command
+cfg.logs[3][10] = 20 
+receive command
+cfg.logs[0][10] = 20 
+receive command
+cfg.logs[2][10] = 20 
+receive command
+cfg.logs[4][10] = 20 
+finish test one
+end check one leader 
+disconnect(2)
+disconnect(3)
+receive command
+cfg.logs[1][11] = 21 
+receive command
+receive command
+cfg.logs[0][11] = 21 
+cfg.logs[4][11] = 21 
+finish test one
+disconnect(1)
+disconnect(4)
+disconnect(0)
+disconnect(2)
+disconnect(3)
+connect(2)
+connect(3)
+disconnect(4)
+connect(4)
+receive command
+cfg.logs[4][1] = 11 
+receive command
+cfg.logs[4][2] = 12 
+receive command
+cfg.logs[4][3] = 13 
+receive command
+cfg.logs[4][4] = 14 
+receive command
+cfg.logs[4][5] = 15 
+receive command
+cfg.logs[4][6] = 16 
+receive command
+cfg.logs[4][7] = 17 
+receive command
+cfg.logs[4][8] = 18 
+receive command
+cfg.logs[4][9] = 19 
+receive command
+cfg.logs[4][10] = 20 
+receive command
+cfg.logs[4][11] = 21 
+receive command
+cfg.logs[4][12] = 22 
+receive command
+cfg.logs[3][1] = 11 
+receive command
+cfg.logs[3][2] = 12 
+receive command
+cfg.logs[3][3] = 13 
+receive command
+cfg.logs[3][4] = 14 
+receive command
+cfg.logs[3][5] = 15 
+receive command
+cfg.logs[3][6] = 16 
+receive command
+cfg.logs[3][7] = 17 
+receive command
+cfg.logs[3][8] = 18 
+receive command
+cfg.logs[3][9] = 19 
+receive command
+cfg.logs[3][10] = 20 
+receive command
+cfg.logs[3][11] = 21 
+receive command
+cfg.logs[3][12] = 22 
+receive command
+cfg.logs[2][1] = 11 
+receive command
+cfg.logs[2][2] = 12 
+receive command
+cfg.logs[2][3] = 13 
+receive command
+cfg.logs[2][4] = 14 
+receive command
+cfg.logs[2][5] = 15 
+receive command
+cfg.logs[2][6] = 16 
+receive command
+cfg.logs[2][7] = 17 
+receive command
+cfg.logs[2][8] = 18 
+receive command
+cfg.logs[2][9] = 19 
+receive command
+cfg.logs[2][10] = 20 
+receive command
+cfg.logs[2][11] = 21 
+receive command
+cfg.logs[2][12] = 22 
+finish test one
+connect(0)
+connect(1)
+receive command
+receive command
+cfg.logs[1][12] = 22 
+cfg.logs[0][12] = 22 
+receive command
+cfg.logs[1][13] = 23 
+receive command
+cfg.logs[0][13] = 23 
+receive command
+cfg.logs[3][13] = 23 
+receive command
+cfg.logs[4][13] = 23 
+receive command
+cfg.logs[2][13] = 23 
+finish test one
+end check one leader 
+disconnect(0)
+disconnect(1)
+receive command
+cfg.logs[4][14] = 24 
+receive command
+cfg.logs[3][14] = 24 
+receive command
+cfg.logs[2][14] = 24 
+finish test one
+disconnect(4)
+disconnect(2)
+disconnect(3)
+disconnect(0)
+disconnect(1)
+connect(0)
+connect(1)
+disconnect(2)
+connect(2)
+receive command
+cfg.logs[2][1] = 11 
+receive command
+cfg.logs[2][2] = 12 
+receive command
+cfg.logs[2][3] = 13 
+receive command
+cfg.logs[2][4] = 14 
+receive command
+cfg.logs[2][5] = 15 
+receive command
+cfg.logs[2][6] = 16 
+receive command
+cfg.logs[2][7] = 17 
+receive command
+cfg.logs[2][8] = 18 
+receive command
+cfg.logs[2][9] = 19 
+receive command
+cfg.logs[2][10] = 20 
+receive command
+cfg.logs[2][11] = 21 
+receive command
+cfg.logs[2][12] = 22 
+receive command
+cfg.logs[2][13] = 23 
+receive command
+cfg.logs[2][14] = 24 
+receive command
+cfg.logs[2][15] = 25 
+receive command
+cfg.logs[0][1] = 11 
+receive command
+cfg.logs[0][2] = 12 
+receive command
+receive command
+cfg.logs[0][3] = 13 
+cfg.logs[1][1] = 11 
+receive command
+receive command
+cfg.logs[1][2] = 12 
+cfg.logs[0][4] = 14 
+receive command
+cfg.logs[0][5] = 15 
+receive command
+receive command
+cfg.logs[1][3] = 13 
+cfg.logs[0][6] = 16 
+receive command
+cfg.logs[0][7] = 17 
+receive command
+cfg.logs[0][8] = 18 
+receive command
+receive command
+cfg.logs[0][9] = 19 
+cfg.logs[1][4] = 14 
+receive command
+receive command
+cfg.logs[0][10] = 20 
+receive command
+cfg.logs[0][11] = 21 
+cfg.logs[1][5] = 15 
+receive command
+receive command
+cfg.logs[0][12] = 22 
+receive command
+cfg.logs[1][6] = 16 
+cfg.logs[0][13] = 23 
+receive command
+receive command
+cfg.logs[1][7] = 17 
+cfg.logs[0][14] = 24 
+receive command
+receive command
+cfg.logs[1][8] = 18 
+receive command
+cfg.logs[0][15] = 25 
+cfg.logs[1][9] = 19 
+receive command
+cfg.logs[1][10] = 20 
+receive command
+cfg.logs[1][11] = 21 
+receive command
+cfg.logs[1][12] = 22 
+receive command
+cfg.logs[1][13] = 23 
+receive command
+cfg.logs[1][14] = 24 
+receive command
+cfg.logs[1][15] = 25 
+finish test one
+connect(3)
+connect(4)
+receive command
+cfg.logs[3][15] = 25 
+receive command
+cfg.logs[4][15] = 25 
+receive command
+cfg.logs[2][16] = 1000 
+receive command
+receive command
+cfg.logs[1][16] = 1000 
+cfg.logs[3][16] = 1000 
+receive command
+cfg.logs[4][16] = 1000 
+receive command
+cfg.logs[0][16] = 1000 
+finish test one
+  ... Passed
+disconnect(0)
+disconnect(1)
+disconnect(2)
+connect(0)
+connect(1)
+connect(2)
+Test (2C): partitioned leader and one follower crash, leader restarts ...
+receive command
+cfg.logs[0][1] = 101 
+receive command
+cfg.logs[1][1] = 101 
+receive command
+cfg.logs[2][1] = 101 
+finish test one
+end check one leader 
+disconnect(2)
+receive command
+cfg.logs[0][2] = 102 
+receive command
+cfg.logs[1][2] = 102 
+finish test one
+disconnect(0)
+disconnect(1)
+connect(2)
+disconnect(0)
+connect(0)
+receive command
+cfg.logs[0][1] = 101 
+receive command
+receive command
+cfg.logs[2][2] = 103 
+cfg.logs[0][2] = 103 
+exit status 1
+FAIL	raft	32.606s

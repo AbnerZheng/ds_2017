@@ -96,6 +96,8 @@ type Raft struct {
 	cmChan           chan bool // 检验是否要apply command
 	applyCh          chan ApplyMsg
 	becomeLeaderChan chan bool
+
+	died      bool // 用于调试
 }
 
 // return currentTerm and whether this server
@@ -200,6 +202,7 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	rf.htChan <- true
 
 	if args.PrevLogIndex > rf.lastLogIndex() {
+		rf.Println("append false")
 		reply.Success = false
 		return
 	}
@@ -365,6 +368,7 @@ func (rf *Raft) lastLogTerm() int {
 // turn off debug output from this instance.
 //
 func (rf *Raft) Kill() {
+	rf.died = true
 	// Your code here, if desired.
 }
 
@@ -387,17 +391,17 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.persister = persister
 	rf.commitIndex = -1
 	rf.me = me
-	rf.voteFor = -1
-	rf.logs = append(rf.logs, Log{Term: 0}) // 占位符，减少判断
-	rf.currentTerm = 0
 	rf.applyCh = applyCh
 
 	// Your initialization code here (2A, 2B, 2C).
 
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
+	if len(rf.logs) < 1{
+		rf.logs = append(rf.logs, Log{Term: 0}) // 占位符，减少判断
+	}
 	rf.state = FOLLOWER
-	rf.htChan = make(chan bool)
+	rf.htChan = make(chan bool, 10)
 	rf.rvChan = make(chan bool)
 	rf.cmChan = make(chan bool)
 	rf.becomeLeaderChan = make(chan bool)
@@ -425,7 +429,7 @@ func (rf *Raft) ApplyCommand() {
 }
 
 func (rf *Raft) Println(format string, a ...interface{}) {
-	if (Debug <= 0) {
+	if (Debug <= 0 || rf.died) {
 		return
 	}
 	t := fmt.Sprintf("current term is %d, I'm %d:", rf.currentTerm, rf.me)
@@ -533,7 +537,7 @@ func (rf *Raft) broadcastAppendEntries() {
 					rf.Println("now nextIndex is %s", rf.nextIndex)
 				} else if !res.Success {
 					rf.mu.Lock()
-					rf.nextIndex[index] = entriesArgs.PrevLogIndex - 1
+					rf.nextIndex[index] = entriesArgs.PrevLogIndex
 					rf.mu.Unlock()
 				}
 			}(i, args)
