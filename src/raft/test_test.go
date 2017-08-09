@@ -87,7 +87,7 @@ func TestBasicAgree2B(t *testing.T) {
 	fmt.Printf("Test (2B): basic agreement ...\n")
 
 	iters := 3
-	for index := 0; index < iters+1; index++ {
+	for index := 1; index < iters+1; index++ {
 		fmt.Printf("start test index is: %d\n", index)
 		nd, _ := cfg.nCommitted(index)
 		if nd > 0 {
