@@ -508,6 +508,7 @@ func (rf *Raft) broadcastAppendEntries() {
 				ok := rf.sendAppendEntries(index, &entriesArgs, &res)
 				if !ok {
 					rf.Println("heart beats rpc error send to %d", index)
+					return
 				}
 				if !res.Success && res.Term > rf.currentTerm {
 					rf.Println("change from leader to follow")
@@ -522,6 +523,10 @@ func (rf *Raft) broadcastAppendEntries() {
 					rf.matchIndex[index] = temp.Index
 					rf.mu.Unlock()
 					rf.Println("now nextIndex is %s", rf.nextIndex)
+				}else if !res.Success{
+					rf.mu.Lock()
+					rf.nextIndex[index] --
+					rf.mu.Unlock()
 				}
 			}(i,args)
 		}
