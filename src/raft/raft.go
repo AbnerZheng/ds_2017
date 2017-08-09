@@ -24,6 +24,8 @@ import (
 	"math/rand"
 	"fmt"
 	"log"
+	"bytes"
+	"encoding/gob"
 )
 
 const ELECTION_TIMEOUT_MIN = 500
@@ -114,12 +116,13 @@ func (rf *Raft) GetState() (int, bool) {
 func (rf *Raft) persist() {
 	// Your code here (2C).
 	// Example:
-	// w := new(bytes.Buffer)
-	// e := gob.NewEncoder(w)
-	// e.Encode(rf.xxx)
-	// e.Encode(rf.yyy)
-	// data := w.Bytes()
-	// rf.persister.SaveRaftState(data)
+	w := new(bytes.Buffer)
+	e := gob.NewEncoder(w)
+	e.Encode(rf.currentTerm)
+	e.Encode(rf.voteFor)
+	e.Encode(rf.logs)
+	data := w.Bytes()
+	rf.persister.SaveRaftState(data)
 }
 
 //
@@ -128,10 +131,11 @@ func (rf *Raft) persist() {
 func (rf *Raft) readPersist(data []byte) {
 	// Your code here (2C).
 	// Example:
-	// r := bytes.NewBuffer(data)
-	// d := gob.NewDecoder(r)
-	// d.Decode(&rf.xxx)
-	// d.Decode(&rf.yyy)
+	r := bytes.NewBuffer(data)
+	d := gob.NewDecoder(r)
+	d.Decode(&rf.currentTerm)
+	d.Decode(&rf.voteFor)
+	d.Decode(&rf.logs)
 	if data == nil || len(data) < 1 { // bootstrap without any state?
 		return
 	}
@@ -177,6 +181,7 @@ type AppendEntriesReply struct {
 func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply) {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
+	defer rf.persist()
 	reply.Success = true
 	reply.Term = rf.currentTerm
 
@@ -213,10 +218,9 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		rf.logs = rf.logs[0: args.PrevLogIndex-baseIndex+1]
 	}
 
-	if len(args.Entries) > 0{
+	if len(args.Entries) > 0 {
 		rf.logs = append(rf.logs, args.Entries...)
 	}
-
 
 	rf.Println("append log, now is %s", rf.logs)
 	reply.Success = true
@@ -242,6 +246,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
+	defer rf.persist()
 	reply.Term = rf.currentTerm
 	if args.Term < rf.currentTerm { // 如果自己的term比过来拉票的server还高的话，直接否决
 		reply.VoteGranted = false // figure 2
@@ -458,6 +463,7 @@ func (rf *Raft) broadcastRequestVotes() {
 					rf.currentTerm = res.Term
 					rf.state = FOLLOWER
 					rf.voteFor = -1
+					defer rf.persist()
 				}
 			}(i)
 		}
@@ -497,7 +503,7 @@ func (rf *Raft) broadcastAppendEntries() {
 				rf.me,
 				rf.nextIndex[i] - 1,
 				rf.logs[rf.nextIndex[i]-1-baseIndex].Term,
-				nil, rf.commitIndex }
+				nil, rf.commitIndex}
 
 			args.Entries = make([]Log, len(rf.logs[rf.nextIndex[i]-baseIndex:]))
 			copy(args.Entries, rf.logs[rf.nextIndex[i]-baseIndex:])
@@ -505,7 +511,7 @@ func (rf *Raft) broadcastAppendEntries() {
 			rf.Println("heart beats sent to %d", i)
 			go func(index int, entriesArgs AppendEntriesArgs) {
 				res := AppendEntriesReply{}
-				rf.Println("to %d is: %s",index, entriesArgs )
+				rf.Println("to %d is: %s", index, entriesArgs)
 				ok := rf.sendAppendEntries(index, &entriesArgs, &res)
 				if !ok {
 					rf.Println("heart beats rpc error send to %d", index)
@@ -517,6 +523,7 @@ func (rf *Raft) broadcastAppendEntries() {
 					rf.currentTerm = res.Term
 					rf.state = FOLLOWER
 					rf.mu.Unlock()
+					defer rf.persist()
 				} else if res.Success && len(entriesArgs.Entries) > 0 {
 					temp := entriesArgs.Entries[len(entriesArgs.Entries)-1]
 					rf.mu.Lock()
@@ -524,12 +531,12 @@ func (rf *Raft) broadcastAppendEntries() {
 					rf.matchIndex[index] = temp.Index
 					rf.mu.Unlock()
 					rf.Println("now nextIndex is %s", rf.nextIndex)
-				}else if !res.Success{
+				} else if !res.Success {
 					rf.mu.Lock()
 					rf.nextIndex[index] = entriesArgs.PrevLogIndex - 1
 					rf.mu.Unlock()
 				}
-			}(i,args)
+			}(i, args)
 		}
 	}
 }
@@ -552,6 +559,7 @@ func (rf *Raft) StateMachine() {
 			rf.currentTerm ++  // increment currentTerm
 			rf.voteFor = rf.me // vote for self
 			rf.voteCount = 1
+			rf.persist()
 			rf.mu.Unlock()
 			rf.Println("enter candidate")
 			//$5.1: issues requestVotes in parallel
