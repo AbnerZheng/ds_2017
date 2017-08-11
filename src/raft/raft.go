@@ -97,7 +97,7 @@ type Raft struct {
 	applyCh          chan ApplyMsg
 	becomeLeaderChan chan bool
 
-	died      bool // 用于调试
+	died bool // 用于调试
 }
 
 // return currentTerm and whether this server
@@ -176,8 +176,10 @@ type AppendEntriesArgs struct {
 }
 
 type AppendEntriesReply struct {
-	Term    int
-	Success bool
+	Term          int
+	RollbackTerm  int
+	RollbackIndex int
+	Success       bool
 }
 
 func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply) {
@@ -201,21 +203,37 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 
 	rf.htChan <- true
 
+	// if follower rejects, includes this in reply:
+	// the follower's term in the conflicting entry
+	// the index of follower's first entry with that term
+	var lastTerm int
+	var lastIndex int
 	if args.PrevLogIndex > rf.lastLogIndex() {
 		rf.Println("append false")
+		reply.RollbackTerm = rf.lastLogTerm()
+		reply.RollbackIndex = rf.lastLogIndex()
 		reply.Success = false
 		return
 	}
 
 	baseIndex := rf.logs[0].Index
-	if args.PrevLogIndex > baseIndex {
-		term := rf.logs[args.PrevLogIndex-baseIndex].Term
-		if args.PrevLogTerm != term {
+	if args.PrevLogIndex > baseIndex && reply.Success {
+		lastTerm = rf.logs[args.PrevLogIndex-baseIndex].Term
+		lastIndex = args.PrevLogIndex
+		if args.PrevLogTerm != lastTerm {
 			reply.Success = false
-			return
 		}
-	} else if args.PrevLogIndex < baseIndex {
+	} else if args.PrevLogIndex < baseIndex &&reply.Success {
 
+	}
+
+	if !reply.Success {
+		for i := len(rf.logs) - 1; i >= 0 && rf.logs[i].Term >= lastTerm; i-- {
+			lastIndex = i
+		}
+		reply.RollbackTerm = lastTerm
+		reply.RollbackIndex = lastIndex
+		return
 	}
 	if args.PrevLogIndex < rf.lastLogIndex() {
 		rf.logs = rf.logs[0: args.PrevLogIndex-baseIndex+1]
@@ -397,7 +415,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
-	if len(rf.logs) < 1{
+	if len(rf.logs) < 1 {
 		rf.logs = append(rf.logs, Log{Term: 0}) // 占位符，减少判断
 	}
 	rf.state = FOLLOWER
@@ -423,6 +441,7 @@ func (rf *Raft) ApplyCommand() {
 				rf.applyCh <- msg
 				rf.lastApplied = i
 			}
+			rf.persist()
 			rf.mu.Unlock()
 		}
 	}
@@ -502,11 +521,19 @@ func (rf *Raft) broadcastAppendEntries() {
 	for i := range rf.peers {
 		if rf.me != i && rf.state == LEADER {
 			rf.mu.Lock()
+
+			prevLogIndex := rf.nextIndex[i] - 1
+			var prevLogTerm int
+			if prevLogIndex == -1 {
+				prevLogTerm = -1
+			}else{
+				prevLogTerm = rf.logs[rf.nextIndex[i]-1-baseIndex].Term
+			}
 			args := AppendEntriesArgs{
 				rf.currentTerm,
 				rf.me,
-				rf.nextIndex[i] - 1,
-				rf.logs[rf.nextIndex[i]-1-baseIndex].Term,
+				prevLogIndex,
+				prevLogTerm,
 				nil, rf.commitIndex}
 
 			args.Entries = make([]Log, len(rf.logs[rf.nextIndex[i]-baseIndex:]))
@@ -537,7 +564,16 @@ func (rf *Raft) broadcastAppendEntries() {
 					rf.Println("now nextIndex is %s", rf.nextIndex)
 				} else if !res.Success {
 					rf.mu.Lock()
-					rf.nextIndex[index] = entriesArgs.PrevLogIndex
+					var i int
+					for i = entriesArgs.PrevLogIndex - baseIndex - 1; i >= 0; i-- {
+						if rf.logs[i].Term == res.RollbackTerm{
+							rf.nextIndex[index] = rf.logs[i].Index;
+							break
+						}else if rf.logs[i].Term < res.RollbackTerm{
+							rf.nextIndex[index] = res.RollbackIndex
+							break
+						}
+					}
 					rf.mu.Unlock()
 				}
 			}(i, args)
